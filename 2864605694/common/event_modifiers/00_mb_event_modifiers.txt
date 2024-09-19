@@ -1,0 +1,143 @@
+more_religious_war = {
+	global_unrest = 2
+	missionaries = 1
+	global_heretic_missionary_strength = 0.03
+}
+
+more_heresies = {
+	global_unrest = 1
+}
+
+mb_bible_controversy = {
+	tolerance_own = -0.5
+	legitimacy = 0.5
+	republican_tradition = 0.2
+	devotion = 0.5
+	global_unrest = 1
+}
+
+mb_bible_translation = {
+	tolerance_own = 0.5
+	prestige = 1
+}
+
+mb_theologian_education = {
+	idea_cost = -0.05
+	devotion = 0.5
+}
+
+mb_theologian_military = {
+	land_morale = 0.05
+	devotion = 0.5
+}
+
+mb_theologian_stability = {
+	stability_cost_modifier = -0.1
+	devotion = 0.5
+}
+
+mb_controversial_ideas_spread = {
+	global_unrest = 2
+}
+
+mb_controversial_ideas_adopted = {
+	global_unrest = 1
+	diplomatic_reputation = -1
+}
+
+mb_ongoing_debate = {
+	global_unrest = 2
+	idea_cost = -0.1
+}
+
+mb_religious_law_change = {
+	global_tax_modifier = -0.1
+}
+
+mb_religious_military = {
+	land_morale = 0.1
+}
+
+mb_embraced_war = {
+	land_morale = 0.05
+	devotion = 0.5
+	diplomatic_reputation = -1
+}
+
+mb_encouraged_peace = {
+	global_unrest = 1
+	development_cost = -0.1
+	diplomatic_reputation = 1
+}
+
+mb_public_witch_trial = {
+	land_morale = 0.1
+	devotion = 0.5
+	diplomatic_reputation = -1
+}
+
+mb_gov_witch_trial = {
+	land_morale = 0.05
+	devotion = 1
+}
+
+mb_burned_witch = {
+	land_morale = 0.1
+	devotion = 1
+	diplomatic_reputation = -2
+}
+
+mb_witch_protected = {
+	land_morale = -0.05
+	global_unrest = 2
+	global_tax_modifier = 0.1
+}
+
+mb_banned_merchants = {
+	global_unrest = -1
+	global_trade_power = -0.1
+}
+
+mb_protected_merchants = {
+	global_unrest = 1
+	global_trade_power = 0.1
+}
+
+mb_removed_heretic_noble = {
+	global_unrest = -1
+	global_tax_modifier = -0.1
+}
+
+mb_heretic_noble = {
+	global_unrest = 1
+}
+
+mb_quelled_dissenters = {
+	global_unrest = 2
+	global_tax_modifier = 0.1
+}
+
+mb_radical_reform = {
+	global_unrest = -3
+	global_tax_modifier = -0.2
+}
+
+mb_followers_migrate = {
+	global_tax_modifier = -0.1
+}
+
+mb_persecuted_radicals = {
+	global_unrest = -3
+	local_missionary_strength = 0.03
+}
+
+mb_limited_radicals = {
+	global_unrest = -2
+	global_tax_modifier = -0.1
+}
+
+mb_radicals_in_country = {
+	global_unrest = -3
+	stability_cost_modifier = 0.2
+	diplomatic_reputation = -1
+}

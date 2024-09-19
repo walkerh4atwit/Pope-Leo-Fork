@@ -1,0 +1,5167 @@
+#Theologians Debate Our Beliefs (Use for All Branches)
+country_event = {
+	id = mb.91
+	title = "mb.91.t"
+	desc = "mb.91.d"
+	picture = PROTESTANT_CATHOLIC_DEBATE_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				OR = {
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+		NOT = { has_country_flag = mb_ongoing_debate }
+	}
+
+	mean_time_to_happen = {
+		months = 1440
+	}
+	
+	option = { #Encourage Debate
+		name = "mb.91.a"
+		set_country_flag = mb_ongoing_debate
+		add_dip_power = -100
+		add_country_modifier = {
+			name = mb_ongoing_debate
+			duration = 9125
+		}
+	}
+	option = { #Discourage Debate
+		name = "mb.91.b"
+		set_country_flag = mb_ongoing_debate
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -25
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -10
+		}
+	}
+}
+
+#Theologians Request Change of Law (Use for All Branches)
+country_event = {
+	id = mb.90
+	title = "mb.90.t"
+	desc = "mb.90.d"
+	picture = COURT_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				OR = {
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+		NOT = { has_country_flag = mb_religious_law_change }
+	}
+
+	mean_time_to_happen = {
+		months = 1440
+	}
+	
+	option = { #Listen to them
+		name = "mb.90.a"
+		if = {
+			limit = {
+				has_estate = estate_church
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 10
+			}
+		}
+		set_country_flag = mb_religious_law_change
+		add_country_modifier = {
+			name = mb_religious_law_change
+			duration = 9125
+		}
+	}
+	option = { #Ignore them
+		name = "mb.90.b"
+		set_country_flag = mb_religious_law_change
+		if = {
+			limit = {
+				has_estate = estate_church
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -25
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -10
+		}
+	}
+}
+
+#Religious Fanatics (zwinglist)
+province_event = {
+	id = mb.79
+	title = "mb.79.t"
+	desc = "mb.79.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = zwinglist
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+			#uses_fervor = yes
+		}
+		NOT = { religion = zwinglist }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.79.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			#add_fervor = -10
+			add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = zwinglist
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.79.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			#add_fervor = 10
+			add_church_power = 25
+		}
+		spawn_rebels = {
+			type = zwinglist_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Religious Fanatics (knoxite)
+province_event = {
+	id = mb.80
+	title = "mb.80.t"
+	desc = "mb.80.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = knoxite
+			#NOT = { num_of_aspects = 3 }
+			#NOT = { church_power = 200 }
+			uses_fervor = yes
+		}
+		NOT = { religion = knoxite }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.80.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			add_fervor = -10
+			#add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = knoxite
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.80.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			add_fervor = 10
+			#add_church_power = 25
+		}
+		spawn_rebels = {
+			type = knoxite_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Religious Fanatics (vasantine)
+province_event = {
+	id = mb.81
+	title = "mb.81.t"
+	desc = "mb.81.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = vasantine
+			#NOT = { num_of_aspects = 3 }
+			#NOT = { church_power = 200 }
+			uses_fervor = yes
+		}
+		NOT = { religion = vasantine }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.81.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			add_fervor = -10
+			#add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = vasantine
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.81.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			add_fervor = 10
+			#add_church_power = 25
+		}
+		spawn_rebels = {
+			type = vasantine_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Religious Fanatics (tausenite)
+province_event = {
+	id = mb.82
+	title = "mb.82.t"
+	desc = "mb.82.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = tausenite
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+			#uses_fervor = yes
+		}
+		NOT = { religion = tausenite }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.82.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			#add_fervor = -10
+			add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = tausenite
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.82.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			#add_fervor = 10
+			add_church_power = 25
+		}
+		spawn_rebels = {
+			type = tausenite_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Religious Fanatics (huguenot)
+province_event = {
+	id = mb.83
+	title = "mb.83.t"
+	desc = "mb.83.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = huguenot
+			#NOT = { num_of_aspects = 3 }
+			#NOT = { church_power = 200 }
+			uses_fervor = yes
+		}
+		NOT = { religion = huguenot }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.83.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			add_fervor = -10
+			#add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = huguenot
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.83.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			add_fervor = 10
+			#add_church_power = 25
+		}
+		spawn_rebels = {
+			type = huguenot_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Religious Fanatics (julianic)
+province_event = {
+	id = mb.84
+	title = "mb.84.t"
+	desc = "mb.84.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = julianic
+			#NOT = { num_of_aspects = 3 }
+			#NOT = { church_power = 200 }
+			uses_fervor = yes
+		}
+		NOT = { religion = julianic }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.84.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			add_fervor = -10
+			#add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = julianic
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.84.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			add_fervor = 10
+			#add_church_power = 25
+		}
+		spawn_rebels = {
+			type = julianic_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Religious Fanatics (arminian)
+province_event = {
+	id = mb.85
+	title = "mb.85.t"
+	desc = "mb.85.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = arminian
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+			#uses_fervor = yes
+		}
+		NOT = { religion = arminian }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.85.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			#add_fervor = -10
+			add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = arminian
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.85.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			#add_fervor = 10
+			add_church_power = 25
+		}
+		spawn_rebels = {
+			type = arminian_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Religious Fanatics (socinian)
+province_event = {
+	id = mb.86
+	title = "mb.86.t"
+	desc = "mb.86.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = socinian
+			#NOT = { num_of_aspects = 3 }
+			#NOT = { church_power = 200 }
+			uses_fervor = yes
+		}
+		NOT = { religion = socinian }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.86.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			add_fervor = -10
+			#add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = socinian
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.86.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			add_fervor = 10
+			#add_church_power = 25
+		}
+		spawn_rebels = {
+			type = socinian_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Religious Fanatics (bironic)
+province_event = {
+	id = mb.87
+	title = "mb.87.t"
+	desc = "mb.87.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = bironic
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+			#uses_fervor = yes
+		}
+		NOT = { religion = bironic }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.87.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			#add_fervor = -10
+			add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = bironic
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.87.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			#add_fervor = 10
+			add_church_power = 25
+		}
+		spawn_rebels = {
+			type = bironic_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Religious Fanatics (radzian)
+province_event = {
+	id = mb.88
+	title = "mb.88.t"
+	desc = "mb.88.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = radzian
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+			#uses_fervor = yes
+		}
+		NOT = { religion = radzian }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.88.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			#add_fervor = -10
+			add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = radzian
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.88.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			#add_fervor = 10
+			add_church_power = 25
+		}
+		spawn_rebels = {
+			type = radzian_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Religious Fanatics (molinist)
+province_event = {
+	id = mb.89
+	title = "mb.89.t"
+	desc = "mb.89.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = molinist
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+			#uses_fervor = yes
+		}
+		NOT = { religion = molinist }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.89.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			#add_fervor = -10
+			add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = molinist
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.89.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			#add_fervor = 10
+			add_church_power = 25
+		}
+		spawn_rebels = {
+			type = molinist_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Religious Fanatics (munsterite)
+province_event = {
+	id = mb.110
+	title = "mb.110.t"
+	desc = "mb.110.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = munsterite
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+			#uses_fervor = yes
+		}
+		NOT = { religion = munsterite }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.110.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			#add_fervor = -10
+			add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = munsterite
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.110.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			#add_fervor = 10
+			add_church_power = 25
+		}
+		spawn_rebels = {
+			type = munsterite_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Religious Fanatics (hutterite)
+province_event = {
+	id = mb.111
+	title = "mb.111.t"
+	desc = "mb.111.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = hutterite
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+			#uses_fervor = yes
+		}
+		NOT = { religion = hutterite }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.111.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			#add_fervor = -10
+			add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = hutterite
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.111.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			#add_fervor = 10
+			add_church_power = 25
+		}
+		spawn_rebels = {
+			type = hutterite_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Religious Fanatics (mennonite)
+province_event = {
+	id = mb.112
+	title = "mb.112.t"
+	desc = "mb.112.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		owner = {
+			religion = mennonite
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+			#uses_fervor = yes
+		}
+		NOT = { religion = mennonite }
+		NOT = { has_province_flag = mb_fanatics }
+		NOT = { has_province_flag = mb_stopped_fanatics }
+	}
+
+	mean_time_to_happen = {
+		months = 1800
+		modifier = {
+			factor = 0.80
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_fanatics
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owned_by = ROOT
+				has_province_flag = mb_stopped_fanatics
+			}
+		}
+	}
+	
+	option = { #Stop the fanatics
+		name = "mb.112.a"
+		set_province_flag = mb_stopped_fanatics
+		owner = {
+			#add_fervor = -10
+			add_church_power = -20
+			random_owned_province = {
+				limit = {
+					continent = europe
+					religion = mennonite
+				}
+				add_unrest = 1
+			}
+		}
+	}
+	option = { #Encourage fanatics
+		name = "mb.112.b"
+		set_province_flag = mb_fanatics
+		owner = {
+			#add_fervor = 10
+			add_church_power = 25
+		}
+		spawn_rebels = {
+			type = mennonite_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_violence
+			duration = 7300
+		}
+	}
+}
+
+#Heretic Advisor at Court (zwinglist)
+country_event = {
+	id = mb.68
+	title = "mb.68.t"
+	desc = "mb.68.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = zwinglist
+		NOT = { num_of_aspects = 3 }
+		NOT = { church_power = 200 }
+		#uses_fervor = yes
+		OR = {
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = zwinglist }
+				type = treasurer
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = zwinglist }
+				type = philosopher
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = zwinglist }
+				type = artist
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = zwinglist }
+				type = theologian
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = zwinglist }
+				type = master_of_mint
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = zwinglist }
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.68.a"
+		#add_fervor = -10
+		add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.68.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Heretic Advisor at Court (knoxite)
+country_event = {
+	id = mb.69
+	title = "mb.69.t"
+	desc = "mb.69.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = knoxite
+		#NOT = { num_of_aspects = 3 }
+		#NOT = { church_power = 200 }
+		uses_fervor = yes
+		OR = {
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = knoxite }
+				type = treasurer
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = knoxite }
+				type = philosopher
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = knoxite }
+				type = artist
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = knoxite }
+				type = theologian
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = knoxite }
+				type = master_of_mint
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = knoxite }
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.69.a"
+		add_fervor = -10
+		#add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.69.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Heretic Advisor at Court (vasantine)
+country_event = {
+	id = mb.70
+	title = "mb.70.t"
+	desc = "mb.70.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = vasantine
+		#NOT = { num_of_aspects = 3 }
+		#NOT = { church_power = 200 }
+		uses_fervor = yes
+		OR = {
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = vasantine }
+				type = treasurer
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = vasantine }
+				type = philosopher
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = vasantine }
+				type = artist
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = vasantine }
+				type = theologian
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = vasantine }
+				type = master_of_mint
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = vasantine }
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.70.a"
+		add_fervor = -10
+		#add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.70.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Heretic Advisor at Court (tausenite)
+country_event = {
+	id = mb.71
+	title = "mb.71.t"
+	desc = "mb.71.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = tausenite
+		NOT = { num_of_aspects = 3 }
+		NOT = { church_power = 200 }
+		#uses_fervor = yes
+		OR = {
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = tausenite }
+				type = treasurer
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = tausenite }
+				type = philosopher
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = tausenite }
+				type = artist
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = tausenite }
+				type = theologian
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = tausenite }
+				type = master_of_mint
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = tausenite }
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.71.a"
+		#add_fervor = -10
+		add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.71.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Heretic Advisor at Court (huguenot)
+country_event = {
+	id = mb.72
+	title = "mb.72.t"
+	desc = "mb.72.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = huguenot
+		#NOT = { num_of_aspects = 3 }
+		#NOT = { church_power = 200 }
+		uses_fervor = yes
+		OR = {
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = huguenot }
+				type = treasurer
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = huguenot }
+				type = philosopher
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = huguenot }
+				type = artist
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = huguenot }
+				type = theologian
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = huguenot }
+				type = master_of_mint
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = huguenot }
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.72.a"
+		add_fervor = -10
+		#add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.72.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Heretic Advisor at Court (julianic)
+country_event = {
+	id = mb.73
+	title = "mb.73.t"
+	desc = "mb.73.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = julianic
+		#NOT = { num_of_aspects = 3 }
+		#NOT = { church_power = 200 }
+		uses_fervor = yes
+		OR = {
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = julianic }
+				type = treasurer
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = julianic }
+				type = philosopher
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = julianic }
+				type = artist
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = julianic }
+				type = theologian
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = julianic }
+				type = master_of_mint
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = julianic }
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.73.a"
+		add_fervor = -10
+		#add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.73.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Heretic Advisor at Court (arminian)
+country_event = {
+	id = mb.74
+	title = "mb.74.t"
+	desc = "mb.74.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = arminian
+		NOT = { num_of_aspects = 3 }
+		NOT = { church_power = 200 }
+		#uses_fervor = yes
+		OR = {
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = arminian }
+				type = treasurer
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = arminian }
+				type = philosopher
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = arminian }
+				type = artist
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = arminian }
+				type = theologian
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = arminian }
+				type = master_of_mint
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = arminian }
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.74.a"
+		#add_fervor = -10
+		add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.74.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Heretic Advisor at Court (socinian)
+country_event = {
+	id = mb.75
+	title = "mb.75.t"
+	desc = "mb.75.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = socinian
+		#NOT = { num_of_aspects = 3 }
+		#NOT = { church_power = 200 }
+		uses_fervor = yes
+		OR = {
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = socinian }
+				type = treasurer
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = socinian }
+				type = philosopher
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = socinian }
+				type = artist
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = socinian }
+				type = theologian
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = socinian }
+				type = master_of_mint
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = socinian }
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.75.a"
+		add_fervor = -10
+		#add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.75.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Heretic Advisor at Court (bironic)
+country_event = {
+	id = mb.76
+	title = "mb.76.t"
+	desc = "mb.76.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = bironic
+		NOT = { num_of_aspects = 3 }
+		NOT = { church_power = 200 }
+		#uses_fervor = yes
+		OR = {
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = bironic }
+				type = treasurer
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = bironic }
+				type = philosopher
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = bironic }
+				type = artist
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = bironic }
+				type = theologian
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = bironic }
+				type = master_of_mint
+			}
+			employed_advisor = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+					religion = zwinglist
+					religion = knoxite
+					religion = vasantine
+					religion = tausenite
+					religion = huguenot
+					religion = julianic
+					religion = arminian
+					religion = socinian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+				NOT = { religion = bironic }
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.76.a"
+		#add_fervor = -10
+		add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.76.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Heretic Advisor at Court (radzian)
+country_event = {
+	id = mb.77
+	title = "mb.77.t"
+	desc = "mb.77.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = radzian
+		NOT = { num_of_aspects = 3 }
+		NOT = { church_power = 200 }
+		#uses_fervor = yes
+		employed_advisor = {
+			OR = {
+				religion = catholic
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = zwinglist
+				religion = knoxite
+				religion = vasantine
+				religion = tausenite
+				religion = huguenot
+				religion = julianic
+				religion = arminian
+				religion = socinian
+				religion = bironic
+				religion = radzian
+				religion = molinist
+				religion = hutterite
+				religion = munsterite
+				religion = mennonite
+			}
+			NOT = { religion = radzian }
+			OR = {
+				type = treasurer
+				type = philosopher
+				type = artist
+				type = theologian
+				type = master_of_mint
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.77.a"
+		#add_fervor = -10
+		add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.77.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Heretic Advisor at Court (molinist)
+country_event = {
+	id = mb.78
+	title = "mb.78.t"
+	desc = "mb.78.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = molinist
+		NOT = { num_of_aspects = 3 }
+		NOT = { church_power = 200 }
+		#uses_fervor = yes
+		employed_advisor = {
+			OR = {
+				religion = catholic
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = zwinglist
+				religion = knoxite
+				religion = vasantine
+				religion = tausenite
+				religion = huguenot
+				religion = julianic
+				religion = arminian
+				religion = socinian
+				religion = bironic
+				religion = radzian
+				religion = molinist
+				religion = hutterite
+				religion = munsterite
+				religion = mennonite
+			}
+			NOT = { religion = molinist }
+			OR = {
+				type = treasurer
+				type = philosopher
+				type = artist
+				type = theologian
+				type = master_of_mint
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.78.a"
+		#add_fervor = -10
+		add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.78.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Heretic Advisor at Court (munsterite)
+country_event = {
+	id = mb.78
+	title = "mb.78.t"
+	desc = "mb.78.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = munsterite
+		NOT = { num_of_aspects = 3 }
+		NOT = { church_power = 200 }
+		#uses_fervor = yes
+		employed_advisor = {
+			OR = {
+				religion = catholic
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = zwinglist
+				religion = knoxite
+				religion = vasantine
+				religion = tausenite
+				religion = huguenot
+				religion = julianic
+				religion = arminian
+				religion = socinian
+				religion = bironic
+				religion = radzian
+				religion = molinist
+				religion = hutterite
+				religion = munsterite
+				religion = mennonite
+			}
+			NOT = { religion = munsterite }
+			OR = {
+				type = treasurer
+				type = philosopher
+				type = artist
+				type = theologian
+				type = master_of_mint
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.78.a"
+		#add_fervor = -10
+		add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.78.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Heretic Advisor at Court (hutterite)
+country_event = {
+	id = mb.78
+	title = "mb.78.t"
+	desc = "mb.78.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = hutterite
+		NOT = { num_of_aspects = 3 }
+		NOT = { church_power = 200 }
+		#uses_fervor = yes
+		employed_advisor = {
+			OR = {
+				religion = catholic
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = zwinglist
+				religion = knoxite
+				religion = vasantine
+				religion = tausenite
+				religion = huguenot
+				religion = julianic
+				religion = arminian
+				religion = socinian
+				religion = bironic
+				religion = radzian
+				religion = molinist
+				religion = hutterite
+				religion = munsterite
+				religion = mennonite
+			}
+			NOT = { religion = hutterite }
+			OR = {
+				type = treasurer
+				type = philosopher
+				type = artist
+				type = theologian
+				type = master_of_mint
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.78.a"
+		#add_fervor = -10
+		add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.78.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Heretic Advisor at Court (mennonite)
+country_event = {
+	id = mb.78
+	title = "mb.78.t"
+	desc = "mb.78.d"
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		religion = mennonite
+		NOT = { num_of_aspects = 3 }
+		NOT = { church_power = 200 }
+		#uses_fervor = yes
+		employed_advisor = {
+			OR = {
+				religion = catholic
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = zwinglist
+				religion = knoxite
+				religion = vasantine
+				religion = tausenite
+				religion = huguenot
+				religion = julianic
+				religion = arminian
+				religion = socinian
+				religion = bironic
+				religion = radzian
+				religion = molinist
+				religion = hutterite
+				religion = munsterite
+				religion = mennonite
+			}
+			NOT = { religion = mennonite }
+			OR = {
+				type = treasurer
+				type = philosopher
+				type = artist
+				type = theologian
+				type = master_of_mint
+				type = inquisitor
+			}
+		}
+		NOT = { has_ruler_flag = mb_heretic_advisor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = mb_heretic_advisor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = { #Keep them
+		name = "mb.78.a"
+		#add_fervor = -10
+		add_church_power = -25
+	}
+	
+	option = { #Dismiss them
+		name = "mb.78.b"
+		reduce_meritocracy_effect = yes
+		add_prestige = -10
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = {
+				advisor = master_of_mint
+			}
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			remove_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			remove_advisor = treasurer
+		}
+	}
+}
+
+#Criticism of Bible Translation (Use for All Branches)
+country_event = {
+	id = mb.62
+	title = "mb.62.t"
+	desc = "mb.62.d"
+	picture = PROTESTANT_PRINTED_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				OR = {
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+		NOT = {
+			has_country_modifier = mb_bible_translation
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 720
+	}
+	
+	option = { #Stand by current translation
+		name = "mb.62.a"
+		if = {
+			limit = { #Uses Church Power
+				OR = {
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = 25
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = 10
+		}
+		add_country_modifier = {
+			name = "mb_bible_controversy"
+			duration = 1825
+		}
+	}
+	
+	option = { #Create a new translation
+		name = "mb.62.b"
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -25
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -10
+		}
+		add_years_of_income = -0.2
+		add_country_modifier = {
+			name = "mb_bible_translation"
+			duration = 3650
+		}
+	}
+}
+
+#Influential Theologian (Use for All Branches)
+country_event = {
+	id = mb.63
+	title = "mb.63.t"
+	desc = "mb.63.d"
+	picture = PROTESTANT_GREAT_REFORMER_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		NOT = { has_country_modifier = mb_theologian_education }
+		NOT = { has_country_modifier = mb_theologian_military }
+		NOT = { has_country_modifier = mb_theologian_stability }
+		religion_years = { protestant = 80 }
+	}
+	
+	mean_time_to_happen = {
+		months = 720
+		modifier = {
+			factor = 0.9
+			is_year = 1650
+		}
+		modifier = {
+			factor = 0.9
+			is_year = 1700
+		}
+		modifier = {
+			factor = 0.9
+			has_idea_group = religious_ideas
+		}
+	}
+	
+	option = { #Use for education
+		name = "mb.63.a"
+		add_country_modifier = {
+			name = "mb_theologian_education"
+			duration = 3650
+		}
+	}
+	
+	option = { #Use for military
+		name = "mb.63.b"
+		add_country_modifier = {
+			name = "mb_theologian_military"
+			duration = 3650
+		}
+	}
+	
+	option = { #Use for stability
+		name = "mb.63.c"
+		add_country_modifier = {
+			name = "mb_theologian_stability"
+			duration = 3650
+		}
+	}
+}
+
+#Heretics Corrupt Church (Use for All Branches)
+country_event = {
+	id = mb.64
+	title = "mb.64.t"
+	desc = "mb.64.d"
+	picture = CORRUPTION_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				OR = {
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 720
+	}
+	
+	option = { #Let them be
+		name = "mb.64.a"
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -40
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -20
+		}
+	}
+	
+	option = { #Denounce the key leaders
+		name = "mb.64.b"
+		add_adm_power = -25
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -20
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -10
+		}
+	}
+	
+	option = { #Remove the corrupted members
+		name = "mb.64.c"
+		add_adm_power = -50
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -10
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -5
+		}
+	}
+}
+
+#Neighbors Critisize Church (Use for All Branches)
+country_event = {
+	id = mb.65
+	title = "mb.65.t"
+	desc = "mb.65.d"
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				OR = {
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 720
+	}
+	
+	option = { #Let them talk (Do Nothing)
+		name = "mb.65.a"
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -30
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -15
+		}
+	}
+	
+	option = { #Counter their critisizms
+		name = "mb.65.b"
+		add_dip_power = -60
+	}
+}
+
+#Expanding the Church (Use for All Branches)
+country_event = {
+	id = mb.66
+	title = "mb.66.t"
+	desc = "mb.66.d"
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				OR = {
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+		any_owned_province = {
+			NOT = { months_since_defection = 60 }
+			NOT = { has_province_flag = mb_under_new_management }
+			has_siege = no
+			is_city = yes
+			religion = FROM
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					NOT = { months_since_defection = 60 }
+					NOT = { has_province_flag = mb_under_new_management }
+					has_siege = no
+					is_city = yes
+					religion = FROM
+				}
+			set_province_flag = mb_under_new_management
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = {
+		name = "mb.66.a" #We unite our faith
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -20
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -10
+		}
+		random_owned_province = {
+			limit = { has_province_flag = mb_under_new_management }
+			add_base_tax = 1
+		}
+	}
+}
+
+#Splitting Withing the Branch (All New Branches)
+country_event = {
+	id = mb.67
+	title = "mb.67.t"
+	desc = "mb.67.d"
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				OR = {
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+		religion_years = { protestant = 30 }
+		NOT = { has_country_modifier = mb_controversial_ideas_spread }
+		NOT = { has_country_modifier = mb_controversial_ideas_adopted }
+	}
+	
+	mean_time_to_happen = {
+		months = 720
+	}
+	
+	option = { #Limit the spread of this new idea
+		name = "mb.67.a"
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -75
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -40
+		}
+		if = {
+			limit = {
+				has_estate = estate_church
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 10
+			}
+		}
+	}
+	option = {
+		name = "mb.67.b" #Let them be
+		if = {
+			limit = {
+				has_estate = estate_church
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+		add_country_modifier = {
+			name = "mb_controversial_ideas_spread"
+			duration = 1825
+		}
+	}
+	option = {
+		name = "mb.67.c" #Adopt the new idea
+		if = {
+			limit = {
+				has_estate = estate_church
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+		add_country_modifier = {
+			name = "mb_controversial_ideas_adopted"
+			duration = 1825
+		}
+	}
+}
+
+#Renewed Momentum (Use for All Branches)
+country_event = {
+	id = mb.92
+	title = "mb.92.t"
+	desc = "mb.92.d"
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				OR = {
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+		religion_years = { protestant = 40 }
+		NOT = { has_country_modifier = mb_religious_military }
+	}
+	
+	mean_time_to_happen = {
+		months = 720
+	}
+	
+	option = { #Foster its Growth
+		name = "mb.92.a"
+		add_adm_power = -50
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = 40
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = 20
+		}
+	}
+	
+	option = { #Encourage in military
+		name = "mb.92.b"
+		add_mil_power = -50
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = 20
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = 10
+		}
+		add_country_modifier = {
+			name = "mb_religious_military"
+			duration = 1825
+		}
+	}
+	
+	option = { #Let it grow naturally
+		name = "mb.92.c"
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = 20
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = 10
+		}
+	}
+}
+
+#Faithful Want War (Use for All Branches)
+country_event = {
+	id = mb.93
+	title = "mb.93.t"
+	desc = "mb.93.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				OR = {
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+		NOT = { has_country_modifier = mb_embraced_war }
+		NOT = { has_country_modifier = mb_encouraged_peace }
+	}
+	
+	mean_time_to_happen = {
+		months = 720
+	}
+	
+	option = { #Embrace war
+		name = "mb.93.a"
+		add_mil_power = 75
+		add_dip_power = -75
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = 30
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = 15
+		}
+		add_country_modifier = {
+			name = "mb_embraced_war"
+			duration = 1825
+		}
+	}
+	
+	option = { #Encourage peace
+		name = "mb.93.b"
+		add_mil_power = -75
+		add_dip_power = 75
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -30
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -15
+		}
+		add_country_modifier = {
+			name = "mb_encouraged_peace"
+			duration = 1825
+		}
+	}
+}
+
+#Popular Figure Accused of Witchcraft (Use for All Branches)
+country_event = {
+	id = mb.94
+	title = "mb.94.t"
+	desc = "mb.94.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				OR = {
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+		NOT = { has_country_modifier = mb_public_witch_trial }
+		NOT = { has_country_modifier = mb_gov_witch_trial }
+		NOT = { has_country_modifier = mb_burned_witch }
+		NOT = { has_country_modifier = mb_witch_protected }
+	}
+	
+	mean_time_to_happen = {
+		months = 720
+	}
+	
+	option = { #Let the Public Decide
+		name = "mb.94.a"
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = 40
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = 20
+		}
+		add_country_modifier = {
+			name = "mb_public_witch_trial"
+			duration = 1825
+		}
+		random = {
+			chance = 75
+			add_stability = -1
+		}
+	}
+	
+	option = { #Let the Local Government Decide
+		name = "mb.94.b"
+		add_adm_power = -50
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = 20
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = 10
+		}
+		add_country_modifier = {
+			name = "mb_gov_witch_trial"
+			duration = 1825
+		}
+		random = {
+			chance = 25
+			add_stability = -1
+		}
+	}
+
+	option = { #Burn the Witch
+		name = "mb.94.c"
+		add_adm_power = -100
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = 50
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = 25
+		}
+		add_country_modifier = {
+			name = "mb_burned_witch"
+			duration = 1825
+		}
+		random = {
+			chance = 50
+			add_stability = -1
+		}
+	}
+
+	option = { #Protect the Man
+		name = "mb.94.e"
+		add_years_of_income = 0.2
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -50
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -25
+		}
+		add_country_modifier = {
+			name = "mb_witch_protected"
+			duration = 1825
+		}
+	}
+}
+
+#Conflict with Foreign Merchants (Use for All Branches)
+country_event = {
+	id = mb.95
+	title = "mb.95.t"
+	desc = "mb.95.d"
+	picture = ECONOMY_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				OR = {
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+		NOT = { has_country_modifier = mb_banned_merchants }
+		NOT = { has_country_modifier = mb_protected_merchants }
+	}
+	
+	mean_time_to_happen = {
+		months = 720
+	}
+	
+	option = { #Ban the Merchants
+		name = "mb.95.a"
+		add_dip_power = -50
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = 25
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = 15
+		}
+		add_country_modifier = {
+			name = "mb_banned_merchants"
+			duration = 3650
+		}
+	}
+	
+	option = { #Protect the Merchants
+		name = "mb.95.b"
+		add_dip_power = -50
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -25
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -15
+		}
+		add_country_modifier = {
+			name = "mb_protected_merchants"
+			duration = 3650
+		}
+	}
+}
+
+#Heretic Noble
+country_event = {
+	id = mb.96
+	title = "mb.96.t"
+	desc = "mb.96.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				OR = {
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+		NOT = { has_country_modifier = mb_removed_heretic_noble }
+		NOT = { has_country_modifier = mb_heretic_noble }
+		NOT = { has_country_modifier = mb_quelled_dissenters }
+	}
+	
+	mean_time_to_happen = {
+		months = 720
+	}
+	
+	option = { #Remove From Power
+		name = "mb.96.a"
+		add_adm_power = -100
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = 40
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = 20
+		}
+		add_country_modifier = {
+			name = "mb_removed_heretic_noble"
+			duration = 3650
+		}
+	}
+	
+	option = { #Maintain Status Quo
+		name = "mb.96.b"
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -30
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -15
+		}
+		add_country_modifier = {
+			name = "mb_heretic_noble"
+			duration = 3650
+		}
+		random_owned_province = {
+			limit = {
+				religion = FROM
+			}
+			add_unrest = 2
+		}
+	}
+	
+	option = { #Quell the Dissenters
+		name = "mb.96.c"
+		add_adm_power = -100
+		add_years_of_income = 0.2
+		if = {
+			limit = {
+				OR = { #Uses Church Power
+					religion = zwinglist
+					religion = tausenite
+					religion = arminian
+					religion = bironic
+					religion = radzian
+					religion = molinist
+				}
+			}
+			add_church_power = -40
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = knoxite
+					religion = vasantine
+					religion = huguenot
+					religion = julianic
+					religion = socinian
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -20
+		}
+		add_country_modifier = {
+			name = "mb_quelled_dissenters"
+			duration = 3650
+		}
+		random_owned_province = {
+			limit = {
+				religion = FROM
+			}
+			add_unrest = 4
+		}
+	}
+}

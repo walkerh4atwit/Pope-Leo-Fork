@@ -1,0 +1,819 @@
+hre_dominant_catholic = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = catholic
+		hre_religion = catholic
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_protestant = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = protestant
+		hre_religion = protestant
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_reformed = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = reformed
+		hre_religion = reformed
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_hussite = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = hussite
+		hre_religion = hussite
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_anglican = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = anglican
+		hre_religion = anglican
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_orthodox = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = orthodox
+		hre_religion = orthodox
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_zwinglist = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = zwinglist
+		hre_religion = zwinglist
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_knoxite = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = knoxite
+		hre_religion = knoxite
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_vasantine = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = vasantine
+		hre_religion = vasantine
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_tausenite = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = tausenite
+		hre_religion = tausenite
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_huguenot = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = huguenot
+		hre_religion = huguenot
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_julianic = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = julianic
+		hre_religion = julianic
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_arminian = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = arminian
+		hre_religion = arminian
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_socinian = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = socinian
+		hre_religion = socinian
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_bironic = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = bironic
+		hre_religion = bironic
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_radzian = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = radzian
+		hre_religion = radzian
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_molinist = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = molinist
+		hre_religion = molinist
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_hutterite = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = hutterite
+		hre_religion = hutterite
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_munsterite = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = munsterite
+		hre_religion = munsterite
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}
+
+hre_dominant_mennonite = {
+	potential = {
+		capital_scope = {
+			continent = europe
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+	}
+
+	trigger = {
+		religion = mennonite
+		hre_religion = mennonite
+		hre_religion_locked = yes
+	}
+	
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+}

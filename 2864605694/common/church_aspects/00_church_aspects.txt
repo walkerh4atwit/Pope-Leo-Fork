@@ -1,0 +1,909 @@
+##NEW ASPECTS (24 Total) For Zwinglist, Tausenite, Arminianist, Bironic, Radzianist, Molinist
+##Zwinglist Aspects = defense focus (8 Unique + 7 General)
+marburg_colloquy = {
+	cost = 100
+	modifier = {
+		tolerance_heretic = -1
+		prestige = 1.25
+	}
+}
+
+fidei_ratio = {
+	cost = 100
+	modifier = {
+		tolerance_heretic = -1
+		legitimacy = 1.25
+	}
+}
+
+zwinglis_pestlied = {
+	cost = 100
+	modifier = {
+		hostile_attrition = 1
+	}
+}
+
+leutpriestertum_of_the_grossmunster = {
+	cost = 100
+	modifier = {
+		global_missionary_strength = 0.01
+	}
+}
+
+the_ox_and_the_labyrinth = {
+	cost = 100
+	modifier = {
+		mercenary_discipline = -0.05
+		discipline = 0.1
+	}
+}
+
+affair_of_the_sausages = {
+	cost = 100
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+	}
+}
+
+carolinum = {
+	cost = 100
+	modifier = {
+		development_cost = -0.05
+	}
+}
+
+das_christliche_burgrecht = {
+	cost = 100
+	modifier = {
+		defensiveness = 0.15
+	}
+}
+
+##Tausenite Aspects = stability focus (8 Unique + 7 General)
+student_of_luther = {
+	cost = 100
+	modifier = {
+		tolerance_heretic = 2
+	}
+}
+
+protected_priests = {
+	cost = 100
+	modifier = {
+		country_admin_power = 1
+	}
+}
+
+adapting_catholic_churches = {
+	cost = 100
+	modifier = {
+		global_tax_modifier = 0.1
+	}
+}
+
+herredag_of_1530 = {
+	cost = 100
+	modifier = {
+		stability_cost_modifier = -0.15
+	}
+}
+
+herredag_of_1533 = {
+	cost = 100
+	modifier = {
+		global_tax_modifier = -0.05
+		church_loyalty_modifier = 0.15
+	}
+}
+
+translation_of_the_pentateuch = {
+	cost = 100
+	modifier = {
+		technology_cost = -0.1
+	}
+}
+
+street_sermons = {
+	cost = 100
+	modifier = {
+		global_missionary_strength = 0.01
+	}
+}
+
+the_even_song = {
+	cost = 100
+	modifier = {
+		diplomatic_reputation = 1
+	}
+}
+
+##Arminianist = trade focus (8 Unique + 7 General)
+the_remonstrantiae = {
+	cost = 100
+	modifier = {
+		prestige = 0.5
+		diplomatic_reputation = 1
+	}
+}
+
+conditional_election = {
+	cost = 100
+	modifier = {
+		global_missionary_strength = 0.01
+	}
+}
+
+limitation_of_the_atonement = {
+	cost = 100
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+	}
+}
+
+prevenient_grace = {
+	cost = 100
+	modifier = {
+		production_efficiency = 0.1
+	}
+}
+
+revision_of_heidelberg_catechism = {
+	cost = 100
+	modifier = {
+		global_manpower_modifier = 0.20
+	}
+}
+
+revision_of_belgic_confession = {
+	cost = 100
+	modifier = {
+		trade_efficiency = 0.1
+	}
+}
+
+eirenicism = {
+	cost = 100
+	modifier = {
+		tolerance_heretic = 2
+	}
+}
+
+synod_of_dort = {
+	cost = 100
+	modifier = {
+		tolerance_heretic = -1
+		legitimacy = 1
+		free_leader_pool = 1
+	}
+}
+
+##Bironic Aspects = science focus (8 Unique + 7 General)
+luther_of_hungary = {
+	cost = 100
+	modifier = {
+		idea_cost = -0.05
+		global_missionary_strength = 0.01
+	}
+}
+
+rudamenta_salutis = {
+	cost = 100
+	modifier = {
+		prestige = 1
+	}
+}
+
+nobility_support = {
+	cost = 100
+	modifier = {
+		nobles_loyalty_modifier = 0.15
+	}
+}
+
+magyar_hit = {
+	cost = 100
+	modifier = {
+		same_culture_advisor_cost = -0.25
+	}
+}
+
+orthographica_hungarica = {
+	cost = 100
+	modifier = {
+		technology_cost = -0.15
+	}
+}
+
+adopt_the_helvetic_confession = {
+	cost = 100
+	modifier = {
+		global_unrest = -1
+		adm_tech_cost_modifier = -0.1
+	}
+}
+
+hungarian_geneva = {
+	cost = 100
+	modifier = {
+		global_institution_spread = 0.1
+	}
+}
+
+balkan_christian_unity = {
+	cost = 100
+	modifier = {
+		religious_unity = 0.20
+	}
+}
+
+##Radzianist Aspects = subject/mil focus (8 Unique + 7 General)
+mikolaj_the_black_radziwill = {
+	cost = 100
+	modifier = {
+		country_admin_power = 1
+	}
+}
+
+mikolaj_the_red_radziwill = {
+	cost = 100
+	modifier = {
+		free_mil_policy = 1
+	}
+}
+
+sovereignty_over_union = {
+	cost = 100
+	modifier = {
+		liberty_desire_from_subject_development = 0.1
+		vassal_forcelimit_bonus = 1
+		vassal_income = 0.1
+	}
+}
+
+polonisation = {
+	cost = 100
+	modifier = {
+		num_accepted_cultures = 1
+		culture_conversion_cost = -0.1
+	}
+}
+
+radziwill_bible = {
+	cost = 100
+	modifier = {
+		stability_cost_modifier = -0.1
+	}
+}
+
+reformation_of_the_nobility = {
+	cost = 100
+	modifier = {
+		nobles_loyalty_modifier = 0.10
+		global_tax_modifier = 0.05
+	}
+}
+
+union_of_reform = {
+	cost = 100
+	modifier = {
+		religious_unity = 0.2
+		prestige = 0.5
+	}
+}
+
+radivilias = {
+	cost = 100
+	modifier = {
+		land_morale = 0.15
+	}
+}
+
+##Molinist Aspects = religious spread focus (8 Unique + 7 General)
+human_liberty = {
+	cost = 100
+	modifier = {
+		development_cost = -0.1
+	}
+}
+
+scientia_media = {
+	cost = 100
+	modifier = {
+		prestige = 1
+	}
+}
+
+gratia_mere_sufficiens = {
+	cost = 100
+	modifier = {
+		devotion = 0.5
+		legitimacy = 0.5
+	}
+}
+
+seperation_of_economics_and_theology = {
+	cost = 100
+	modifier = {
+		production_efficiency = 0.1
+	}
+}
+
+congregatio_de_auxiliis_gratiae = {
+	cost = 100
+	modifier = {
+		church_loyalty_modifier = 0.10
+		discipline = 0.05
+	}
+}
+
+jesuit_origins = {
+	cost = 100
+	modifier = {
+		global_missionary_strength = 0.02
+	}
+}
+
+union_of_reformation_and_catholism = {
+	cost = 100
+	modifier = {
+		tolerance_heretic = 4
+	}
+}
+
+roses = {
+	cost = 100
+	modifier = {
+		church_power_modifier = 0.05
+	}
+}
+
+##General Aspects (24 Total)
+state_sponsored_churches_aspect = {
+	cost = 100
+	modifier = {
+		technology_cost = -0.10
+	}
+}
+
+religious_taxes_aspect = {
+	cost = 100
+	modifier = {
+		global_tax_modifier = 0.10
+	}
+}
+
+diplomatic_priests_aspect = {
+	cost = 100
+	modifier = {
+		diplomatic_reputation = 1
+	}
+}
+
+holy_integration_aspect = {
+	cost = 100
+	modifier = {
+		core_creation = -0.10
+	}
+}
+
+confessions_in_court_aspect = {
+	cost = 100
+	modifier = {
+		yearly_corruption = -0.1
+	}
+}
+
+combination_of_church_and_state_aspect = {
+	cost = 100
+	modifier = {
+		advisor_cost = -0.10
+	}
+}
+
+sermons_and_sieges_aspect = {
+	cost = 100
+	modifier = {
+		siege_ability = 0.10
+	}
+}
+
+female_priests_aspect = {
+	cost = 100
+	modifier = {
+		female_advisor_chance = 0.3
+		improve_relation_modifier = 0.3
+	}
+}
+
+holy_wars_aspect = {
+	cost = 100
+	modifier = {
+		province_warscore_cost = -0.1
+	}
+}
+
+national_tolerance_aspect = {
+	cost = 100
+	modifier = {
+		religious_unity = 0.15
+	}
+}
+
+guild_sponsorships_aspect = {
+	cost = 100
+	modifier = {
+		merchants = 1
+	}
+}
+
+expansionist_beliefs_aspect = {
+	cost = 100
+	modifier = {
+		ae_impact = -0.10
+	}
+}
+
+church_influence_aspect = {
+	cost = 100
+	modifier = {
+		advisor_pool = 1
+	}
+}
+
+financial_ambitions_aspect = {
+	cost = 100
+	modifier = {
+		global_trade_power = 0.10
+	}
+}
+
+overseas_expansion_aspect = {
+	cost = 100
+	modifier = {
+		range = 0.33
+	}
+}
+
+counter_counter_reformation_aspect = {
+	cost = 100
+	modifier = {
+		defensiveness = 0.20
+	}
+}
+
+zealous_commoners_aspect = {
+	cost = 100
+	modifier = {
+		hostile_attrition = 1.0
+	}
+}
+
+sacred_lands_aspect = {
+	cost = 100
+	modifier = {
+		global_autonomy = -0.05
+	}
+}
+
+productive_believers_aspect = {
+	cost = 100
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+	}
+}
+
+messengers_of_the_reformation_aspect = {
+	cost = 100
+	modifier = {
+		cavalry_power = 0.2
+	}
+}
+
+gods_arsenal_aspect = {
+	cost = 100
+	modifier = {
+		naval_forcelimit_modifier = 0.20
+	}
+}
+
+war_priests_aspect = {
+	cost = 100
+	modifier = {
+		infantry_power = 0.2
+	}
+}
+
+will_through_faith_aspect = {
+	cost = 100
+	modifier = {
+		movement_speed = 0.15
+	}
+}
+
+holy_builders_aspect = {
+	cost = 100
+	modifier = {
+		build_cost = -0.15
+	}
+}
+
+##OLD ASPECTS (15 Total)
+##dev cost, stab cost, miss strength, discipline, morale, prestige, legitimacy, colony grow,
+##manpower recov, idea cost, unrest
+organised_through_bishops_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = { 
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = organised_through_bishops_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = {
+		development_cost = -0.05
+	}
+	ai_will_do = {
+		factor = 15
+		modifier = {
+			factor = 1
+			is_at_war = no
+		}
+	}
+}
+
+priests_may_marry_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = priests_may_marry_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = {
+		church_influence_modifier = -0.1
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			NOT = { religious_unity = 0.8 }
+		}
+		modifier = {
+			factor = 2
+			unrest = 4
+			NOT = { stability = 0 }
+		}
+	}
+}
+
+adult_baptism_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = adult_baptism_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = { 
+		global_missionary_strength = 0.01
+	}
+	ai_will_do = {
+		factor = 12
+		modifier = {
+			factor = 2
+			NOT = { religious_unity = 0.8 }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_province = {
+					has_owner_religion = no
+				}
+			}
+		}
+	}
+}
+
+holy_sacraments_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = holy_sacraments_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = { 
+		discipline = 0.025
+	}
+	ai_will_do = {
+		factor = 12
+		modifier = {
+			factor = 2
+			is_at_war = yes
+		}
+	}
+}
+
+saints_accept_prayers_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = saints_accept_prayers_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = { 
+		land_morale = 0.05
+		naval_morale = 0.05
+	}
+	ai_will_do = {
+		factor = 12
+		modifier = {
+			factor = 2
+			is_at_war = yes
+		}
+	}
+}
+
+icons_images_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = icons_images_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = { 
+		prestige = 0.5
+	}
+	ai_will_do = {
+		factor = 12
+		modifier = {
+			factor = 2
+			NOT = { prestige = -40 }
+		}
+	}
+}
+
+legalised_divorces_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = legalised_divorces_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = {
+		legitimacy = 0.5
+		devotion = 0.5
+		horde_unity = 0.5
+		republican_tradition = 0.2
+	}
+	ai_will_do = {
+		factor = 6
+		modifier = {
+			factor = 2
+			NOT = { legitimacy_equivalent = 80 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { legitimacy_equivalent = 60 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { legitimacy_equivalent = 40 }
+		}
+		modifier = {
+			factor = 0
+			legitimacy_equivalent = 95
+		}
+	}
+}
+
+heretics_deported_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = heretics_deported_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = {
+		global_colonial_growth = 15
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			num_of_colonies = 1
+		}
+		modifier = {
+			factor = 2
+			num_of_colonists = 2
+		}
+	}
+}
+
+parish_registers_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = parish_registers_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = {
+		free_adm_policy = 1 
+	}
+	ai_will_do = {
+		factor = 5
+	}
+}
+
+individual_creeds_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = individual_creeds_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = { 
+		idea_cost = -0.05
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+allow_usury_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = allow_usury_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = { 
+		production_efficiency = 0.1
+	}
+	ai_will_do = {
+		factor = 17
+		modifier = {
+			factor = 0.5
+			treasury = 500
+		}
+		modifier = {
+			factor = 0
+			treasury = 2500
+		}
+	}
+}
+
+translated_bibles_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = translated_bibles_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = {
+		global_unrest = -1
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			unrest = 2
+		}
+		modifier = {
+			factor = 2
+			num_of_rebel_controlled_provinces = 1
+		}	
+	}
+}
+
+justified_religious_war_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = justified_religious_war_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = {
+		ae_impact = -0.05
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			is_at_war = no
+		}
+	}
+}
+
+war_preaches_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = war_preaches_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = {
+		war_exhaustion = -0.03
+	}
+	ai_will_do = {
+		factor = 2
+		modifier = {
+			factor = 0
+			is_at_war = no
+		}
+	}
+}
+
+head_of_the_church_aspect = {
+	cost = 100
+	effect = {
+		hidden_effect = {
+			clr_protestant_aspects_buffs = yes
+			add_country_modifier = {
+				name = head_of_the_church_aspect_modifier
+				duration = 3650
+			}
+		}
+	}
+	modifier = {
+		global_autonomy = -0.025
+	}
+	ai_will_do = {
+		factor = 2
+		modifier = {
+			factor = 0
+			is_at_war = no
+		}
+	}
+}

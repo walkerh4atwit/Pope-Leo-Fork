@@ -1,0 +1,49 @@
+on_lock_hre_religion = {
+	events = {
+		religious_leagues.1
+		religious_leagues.8
+		religious_leagues.9
+		religious_leagues.10
+		religious_leagues.11
+		religious_leagues.12
+		religious_leagues.13
+		religious_leagues.14
+		religious_leagues.15
+		religious_leagues.16
+		religious_leagues.17
+		religious_leagues.18
+		religious_leagues.19
+		religious_leagues.20
+		religious_leagues.21
+		religious_leagues.22
+		religious_leagues.23
+		religious_leagues.24
+		religious_leagues.25
+		religious_leagues.26
+	}
+}
+
+on_change_hre_religion = {
+	events = {
+		religious_leagues.2
+		religious_leagues.3
+		religious_leagues.27
+		religious_leagues.28
+		religious_leagues.29
+		religious_leagues.30
+		religious_leagues.31
+		religious_leagues.32
+		religious_leagues.33
+		religious_leagues.34
+		religious_leagues.35
+		religious_leagues.36
+		religious_leagues.37
+		religious_leagues.38
+		religious_leagues.39
+		religious_leagues.40
+		religious_leagues.41
+		religious_leagues.42
+		religious_leagues.43
+		religious_leagues.44
+	}
+}
