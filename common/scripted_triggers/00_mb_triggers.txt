@@ -1,0 +1,114 @@
+can_have_center_of_reformation_trigger = { #Province Scope
+	#$RELIGION$ needs to match the religion of the center that is being spawned.
+	OR = {
+		religion = catholic
+		religion = protestant
+		religion = reformed
+		religion = hussite
+		religion = anglican
+		religion = zwinglist
+		religion = knoxite
+		religion = vasantine
+		religion = tausenite
+		religion = huguenot
+		religion = julianic
+		religion = arminian
+		religion = socinian
+		religion = bironic
+		religion = radzian
+		religion = molinist
+		religion = orthodox
+		religion = munsterite
+		religion = hutterite
+		religion = mennonite
+	}
+	NOT = {
+		any_province = {
+			area = PREV
+			is_reformation_center = yes
+			religion = $RELIGION$
+		}
+	}
+	OR = {
+		NOT = { is_religion_enabled = protestant }
+		NOT = { religion_years = { protestant = 20 } }
+		current_age = age_of_reformation
+	}
+	NOT = { province_id = 118 }
+	is_reformation_center = no
+	expelling_minorities = no
+	NOT = { has_climate = arctic }
+	NOT = { has_terrain = coastal_desert }
+	NOT = { has_terrain = desert }
+	NOT = { has_terrain = glacier }
+	NOT = { has_climate = tropical }
+}
+
+secondary_religion_group = {
+	[[christian]
+		OR = {
+			secondary_religion = catholic
+			secondary_religion = hussite
+			secondary_religion = coptic
+			secondary_religion = orthodox
+			secondary_religion = protestant
+			secondary_religion = reformed
+			secondary_religion = anglican
+			secondary_religion = zwinglist
+			secondary_religion = knoxite
+			secondary_religion = vasantine
+			secondary_religion = tausenite
+			secondary_religion = huguenot
+			secondary_religion = julianic
+			secondary_religion = arminian
+			secondary_religion = socinian
+			secondary_religion = bironic
+			secondary_religion = radzian
+			secondary_religion = molinist
+			secondary_religion = munsterite
+			secondary_religion = hutterite
+			secondary_religion = mennonite
+		}
+	]
+	[[muslim]
+		OR = {
+			secondary_religion = sunni
+			secondary_religion = shiite
+			secondary_religion = ibadi
+		}
+	]
+	[[eastern]
+		OR = {
+			secondary_religion = buddhism
+			secondary_religion = vajrayana
+			secondary_religion = mahayana
+			secondary_religion = confucianism
+			secondary_religion = shinto
+		}
+	]
+	[[dharmic]
+		OR = {
+			secondary_religion = hinduism
+			secondary_religion = sikhism
+		}
+	]
+	[[pagan]
+		OR = {
+			secondary_religion = animism
+			secondary_religion = shamanism
+			secondary_religion = totemism
+			secondary_religion = inti
+			secondary_religion = nahuatl
+			secondary_religion = mesoamerican_religion
+			secondary_religion = norse_pagan_reformed
+			secondary_religion = tengri_pagan_reformed
+			secondary_religion = dreamtime
+		}
+	]
+	[[jewish_group]
+		secondary_religion = jewish
+	]
+	[[zoroastrian_group]
+		secondary_religion = zoroastrian
+	]
+}

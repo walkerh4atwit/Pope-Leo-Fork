@@ -1,0 +1,140 @@
+confiscated_church_lands = {
+	sprite = "GFX_confiscated_church_lands_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = confiscated_church_lands_tooltip
+		hidden_effect = {
+			add_global_modifier = {
+				name = confiscated_church_lands_modifier
+				duration = 5475
+			}
+			modifier = {
+				global_tax_modifier = 0.1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+sermons_in_the_vernacular = {
+	sprite = "GFX_sermons_in_the_vernacular_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = sermons_in_the_vernacular_tooltip
+		hidden_effect = {
+			modifier = {
+				global_missionary_strength = 0.01
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+swedish_artillery_reform = {
+	sprite = "GFX_swedish_artillery_reform_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = swedish_artillery_reform_tooltip
+		hidden_effect = {
+			modifier = {
+				artillery_power = 0.1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+educational_reforms = {
+	sprite = "GFX_educational_reforms_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = educational_reforms_tooltip
+		hidden_effect = {
+			modifier = {
+				global_institution_spread = 0.1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+royal_patronage_of_the_arts = {
+	sprite = "GFX_royal_patronage_of_the_arts_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = royal_patronage_of_the_arts_tooltip
+		hidden_effect = {
+			modifier = {
+				prestige = 1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+militant_piety = {
+	sprite = "GFX_militant_piety_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = militant_piety_tooltip
+		hidden_effect = {
+			modifier = {
+				land_morale = 0.05
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+centralized_ecclesiastical_authority = {
+	sprite = "GFX_centralized_ecclesiastical_authority_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = centralized_ecclesiastical_authority_tooltip
+		hidden_effect = {
+			modifier = {
+				global_tax_modifier = 0.05
+				liberty_desire_from_subject_development = 0.1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+missionary_diplomacy = {
+	sprite = "GFX_missionary_diplomacy_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = missionary_diplomacy_tooltip
+		hidden_effect = {
+			modifier = {
+				improve_relation_modifier = 0.2
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}

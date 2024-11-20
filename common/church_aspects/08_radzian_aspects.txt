@@ -1,0 +1,152 @@
+religious_unity = {
+	sprite = "GFX_religious_unity_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = religious_unity_tooltip
+		hidden_effect = {
+			modifier = {
+				tolerance_heretic = 2
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+cultural_tolerance = {
+	sprite = "GFX_cultural_tolerance_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = cultural_tolerance_tooltip
+		hidden_effect = {
+			modifier = {
+				num_accepted_cultures = 1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+noble_control_of_religion = {
+	sprite = "GFX_noble_control_of_religion_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = noble_control_of_religion_tooltip
+		hidden_effect = {
+			modifier = {
+				legitimacy = 2
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+syncretic_traditions = {
+	sprite = "GFX_syncretic_traditions_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = syncretic_traditions_tooltip
+		hidden_effect = {
+			modifier = {
+				global_missionary_strength = 0.01
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+high_religious_innovation = {
+	sprite = "GFX_high_religious_innovation_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = high_religious_innovation_tooltip
+		hidden_effect = {
+			modifier = {
+				innovativeness_gain = 0.5
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+religious_pluralism = {
+	sprite = "GFX_religious_pluralism_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = religious_pluralism_tooltip
+		hidden_effect = {
+			modifier = {
+				global_unrest = -2
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+state_and_church_separation = {
+	sprite = "GFX_state_and_church_separation_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = state_and_church_separation_tooltip
+		hidden_effect = {
+			modifier = {
+				advisor_cost = -0.15
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+patronage_of_education_and_innovation = {
+	sprite = "GFX_patronage_of_education_and_innovation_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = patronage_of_education_and_innovation_tooltip
+		hidden_effect = {
+			modifier = {
+				global_institution_spread = 0.1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+commonwealth_faith = {
+	sprite = "GFX_commonwealth_faith_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = commonwealth_faith_tooltip
+		hidden_effect = {
+			modifier = {
+				cavalry_power = 0.15
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}

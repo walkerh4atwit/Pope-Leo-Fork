@@ -1,0 +1,135 @@
+confiscation_of_monasteries = {
+	sprite = "GFX_confiscation_of_monasteries_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = confiscation_of_monasteries_tooltip
+		hidden_effect = {
+			modifier = {
+				global_tax_modifier = 0.1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+peasant_empowerment = {
+	sprite = "GFX_peasant_empowerment_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = peasant_empowerment_tooltip
+		hidden_effect = {
+			modifier = {
+				development_cost = -0.1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus_on_scripture = {
+	sprite = "GFX_focus_on_scripture_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = focus_on_scripture_tooltip
+		hidden_effect = {
+			modifier = {
+				global_missionary_strength = 0.01
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+moderate_tolerance = {
+	sprite = "GFX_moderate_tolerance_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = moderate_tolerance_tooltip
+		hidden_effect = {
+			modifier = {
+				tolerance_heretic = 1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+simplified_worship_practices = {
+	sprite = "GFX_simplified_worship_practices_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = simplified_worship_practices_tooltip
+		hidden_effect = {
+			modifier = {
+				advisor_cost = -0.15
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+defenders_of_the_north = {
+	sprite = "GFX_defenders_of_the_north_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = defenders_of_the_north_tooltip
+		hidden_effect = {
+			modifier = {
+				own_coast_naval_combat_bonus = 1.0
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+maritime_tithes = {
+	sprite = "GFX_maritime_tithes_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = maritime_tithes_tooltip
+		hidden_effect = {
+			modifier = {
+				trade_efficiency = 0.1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+danish_marines = {
+	sprite = "GFX_danish_marines_icon"
+	cost = 100
+	trigger = {}
+	effect = {
+		custom_tooltip = danish_marines_tooltip
+		hidden_effect = {
+			modifier = {
+				allowed_marine_fraction = 0.25
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
