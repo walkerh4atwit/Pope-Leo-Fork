@@ -1,0 +1,4770 @@
+########################################
+# Events for Religious Leagues
+#
+# written by Martin Anward
+########################################
+
+namespace = religious_leagues
+
+####################################################################################
+# EMPEROR TRIUMPHANT EVENTS (Lock hre religion based on victor religion)
+####################################################################################
+
+# The Emperor Triumphant (Catholic)
+country_event = {
+	id = religious_leagues.1
+	title = "religious_leagues.1.t"
+	desc = "religious_leagues.1.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.1.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Lutheranist)
+country_event = {
+	id = religious_leagues.8
+	title = "religious_leagues.8.t"
+	desc = "religious_leagues.8.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = protestant
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.8.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Orthodox)
+country_event = {
+	id = religious_leagues.9
+	title = "religious_leagues.9.t"
+	desc = "religious_leagues.9.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = orthodox
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.9.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Calvinist)
+country_event = {
+	id = religious_leagues.10
+	title = "religious_leagues.10.t"
+	desc = "religious_leagues.10.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = reformed
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.10.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Anglican)
+country_event = {
+	id = religious_leagues.11
+	title = "religious_leagues.11.t"
+	desc = "religious_leagues.11.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = anglican
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.11.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Hussite)
+country_event = {
+	id = religious_leagues.12
+	title = "religious_leagues.12.t"
+	desc = "religious_leagues.12.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = hussite
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.12.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Zwinglist)
+country_event = {
+	id = religious_leagues.13
+	title = "religious_leagues.13.t"
+	desc = "religious_leagues.13.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = zwinglist
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.13.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Presbyterian)
+country_event = {
+	id = religious_leagues.14
+	title = "religious_leagues.14.t"
+	desc = "religious_leagues.14.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = knoxite
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.14.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Vasantine)
+country_event = {
+	id = religious_leagues.15
+	title = "religious_leagues.15.t"
+	desc = "religious_leagues.15.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = vasantine
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.15.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Tausenite)
+country_event = {
+	id = religious_leagues.16
+	title = "religious_leagues.16.t"
+	desc = "religious_leagues.16.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = tausenite
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.16.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Huguenot)
+country_event = {
+	id = religious_leagues.17
+	title = "religious_leagues.17.t"
+	desc = "religious_leagues.17.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = huguenot
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.17.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Servetusic)
+country_event = {
+	id = religious_leagues.18
+	title = "religious_leagues.18.t"
+	desc = "religious_leagues.18.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = julianic
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.18.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Arminianist)
+country_event = {
+	id = religious_leagues.19
+	title = "religious_leagues.19.t"
+	desc = "religious_leagues.19.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = arminian
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.19.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Socinianist)
+country_event = {
+	id = religious_leagues.20
+	title = "religious_leagues.20.t"
+	desc = "religious_leagues.20.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = socinian
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.20.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Bironic)
+country_event = {
+	id = religious_leagues.21
+	title = "religious_leagues.21.t"
+	desc = "religious_leagues.21.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = bironic
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.21.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Radzianist)
+country_event = {
+	id = religious_leagues.22
+	title = "religious_leagues.22.t"
+	desc = "religious_leagues.22.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = radzian
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.22.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Molinist)
+country_event = {
+	id = religious_leagues.23
+	title = "religious_leagues.23.t"
+	desc = "religious_leagues.23.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = molinist
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.23.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Hutterite)
+country_event = {
+	id = religious_leagues.24
+	title = "religious_leagues.24.t"
+	desc = "religious_leagues.24.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = hutterite
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.24.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Munsterite)
+country_event = {
+	id = religious_leagues.25
+	title = "religious_leagues.25.t"
+	desc = "religious_leagues.25.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = munsterite
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.25.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+# The Emperor Triumphant (Mennonite)
+country_event = {
+	id = religious_leagues.26
+	title = "religious_leagues.26.t"
+	desc = "religious_leagues.26.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = mennonite
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.26.a"
+		tooltip = { 
+			set_hre_religion_locked = yes 
+		}
+	}
+}
+
+####################################################################################
+# LEAGUE VICTORY EVENTS
+####################################################################################
+
+# Victory of the Catholic League
+country_event = {
+	id = religious_leagues.3
+	title = "religious_leagues.3.t"
+	desc = "religious_leagues.3.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		OR = {
+			hre_religion = orthodox
+			hre_religion = protestant
+			hre_religion = reformed
+			hre_religion = anglican
+			hre_religion = hussite
+			hre_religion = zwinglist
+			hre_religion = knoxite
+			hre_religion = vasantine
+			hre_religion = tausenite
+			hre_religion = huguenot
+			hre_religion = julianic
+			hre_religion = arminian
+			hre_religion = socinian
+			hre_religion = bironic
+			hre_religion = radzian
+			hre_religion = molinist
+			hre_religion = hutterite
+			hre_religion = munsterite
+			hre_religion = mennonite
+		}
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			set_hre_heretic_religion = protestant
+			set_hre_religion = catholic
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.3.a"
+		tooltip = { 
+			set_hre_heretic_religion = protestant
+			set_hre_religion = catholic
+			set_hre_religion_locked = yes
+		}
+	}
+}
+
+# Victory of the Lutheranist League
+country_event = {
+	id = religious_leagues.2
+	title = "religious_leagues.2.t"
+	desc = "religious_leagues.2.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = protestant
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = protestant
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+			
+			#REFORMED WILL GET THEIR OWN CHANCE TO BECOME REFORMED LEAGUE
+			#
+			#Check whether Dissensions among the Reformers incident should happen
+			#Needs 2/3 of the Empire to be owned by Reformed princes
+			#while = {
+			#	limit = {
+			#		any_province = {
+			#			is_part_of_hre = yes
+			#			owner = {
+			#				is_part_of_hre = yes
+			#				religion = reformed
+			#			}
+			#			NOT = { has_province_flag = hre_post_leaguewar_reformed_owned }
+			#		}
+			#	}
+			#	1 = { #Stockholm is the global variable substitute
+			#		change_variable = {
+			#			which = reformed_hre_member_provinces
+			#			value = 1
+			#		}
+			#	}
+			#	random_province = {
+			#		limit = {
+			#			is_part_of_hre = yes
+			#			owner = {
+			#				is_part_of_hre = yes
+			#				religion = reformed
+			#			}
+			#			NOT = { has_province_flag = hre_post_leaguewar_reformed_owned }
+			#		}
+			#		set_province_flag = hre_post_leaguewar_reformed_owned
+			#	}
+			#}
+
+			#while = {
+			#	limit = {
+			#		any_province = {
+			#			is_part_of_hre = yes
+			#			owner = {
+			#				is_part_of_hre = yes
+			#				NOT = { religion = reformed }
+			#			}
+			#			NOT = { has_province_flag = hre_post_leaguewar_non_reformed_owned }
+			#		}
+			#	}
+			#	1 = {
+			#		change_variable = {
+			#			which = non_reformed_hre_member_provinces
+			#			value = 1
+			#		}
+			#	}
+			#	random_province = {
+			#		limit = {
+			#			is_part_of_hre = yes
+			#			owner = {
+			#				is_part_of_hre = yes
+			#				NOT = { religion = reformed }
+			#			}
+			#			NOT = { has_province_flag = hre_post_leaguewar_non_reformed_owned }
+			#		}
+			#		set_province_flag = hre_post_leaguewar_non_reformed_owned
+			#	}
+			#}
+
+			#every_province = {
+			#	limit = {
+			#		is_part_of_hre = yes
+			#	}
+			#	clr_province_flag = hre_post_leaguewar_non_reformed_owned
+			#	clr_province_flag = hre_post_leaguewar_reformed_owned
+			#}
+
+			#1 = {
+			#	set_variable = {
+			#		which = reformed_others_member_provinces_ratio
+			#		which = reformed_hre_member_provinces
+			#	}
+			#	divide_variable = {
+			#		which = reformed_others_member_provinces_ratio
+			#		which = non_reformed_hre_member_provinces
+			#	}
+			#	if = {
+			#		limit = {
+			#			check_variable = {
+			#				which = reformed_others_member_provinces_ratio
+			#				value = 0.8
+			#			}
+			#		}
+			#		set_global_flag = incident_reformer_dissension_can_happen
+			#	}
+			#	if = {
+			#		limit = {
+			#			check_variable = {
+			#				which = reformed_others_member_provinces_ratio
+			#				value = 1
+			#			}
+			#		}
+			#		set_global_flag = incident_reformer_dissension_high_chance
+			#	}
+			#}
+		}
+	}
+
+	option = {
+		name = "religious_leagues.2.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = protestant	
+			set_hre_religion_locked = yes			
+		}
+
+		#if = {
+		#	limit = {
+		#		has_dlc = "Emperor"
+		#		has_global_flag = incident_reformer_dissension_can_happen
+		#	}
+		#	custom_tooltip = incident_reformer_dissension_can_happen_tt
+		#	set_imperial_incident = incident_reformer_dissension
+		#}
+
+		# this should elect a new emperor
+		set_hre_religion = protestant
+	}
+
+	#after = {
+	#	1 = {
+	#		set_variable = {
+	#			which = non_reformed_hre_member_provinces
+	#			value = 0
+	#		}
+	#		set_variable = {
+	#			which = reformed_hre_member_provinces
+	#			value = 0
+	#		}
+	#		set_variable = {
+	#			which = reformed_others_member_provinces_ratio
+	#			value = 0
+	#		}
+	#	}
+	#}
+}
+
+# Victory of the Calvinist League
+country_event = {
+	id = religious_leagues.27
+	title = "religious_leagues.27.t"
+	desc = "religious_leagues.27.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = reformed
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = reformed
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.27.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = reformed
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = reformed
+	}
+}
+
+# Victory of the Orthodox League
+country_event = {
+	id = religious_leagues.28
+	title = "religious_leagues.28.t"
+	desc = "religious_leagues.28.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = orthodox
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = orthodox
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.28.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = orthodox
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = orthodox
+	}
+}
+
+# Victory of the Anglican League
+country_event = {
+	id = religious_leagues.29
+	title = "religious_leagues.29.t"
+	desc = "religious_leagues.29.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = anglican
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = anglican
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.29.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = anglican
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = anglican
+	}
+}
+
+# Victory of the Hussite League
+country_event = {
+	id = religious_leagues.30
+	title = "religious_leagues.30.t"
+	desc = "religious_leagues.30.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = hussite
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = hussite
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.30.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = hussite
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = hussite
+	}
+}
+
+# Victory of the Zwinglist League
+country_event = {
+	id = religious_leagues.31
+	title = "religious_leagues.31.t"
+	desc = "religious_leagues.31.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = zwinglist
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = zwinglist
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.31.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = zwinglist
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = zwinglist
+	}
+}
+
+# Victory of the Presbyterian League
+country_event = {
+	id = religious_leagues.32
+	title = "religious_leagues.32.t"
+	desc = "religious_leagues.32.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = knoxite
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = knoxite
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.32.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = knoxite
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = knoxite
+	}
+}
+
+# Victory of the Vasantine League
+country_event = {
+	id = religious_leagues.33
+	title = "religious_leagues.33.t"
+	desc = "religious_leagues.33.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = vasantine
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = vasantine
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.33.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = vasantine
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = vasantine
+	}
+}
+
+# Victory of the Tausenite League
+country_event = {
+	id = religious_leagues.34
+	title = "religious_leagues.34.t"
+	desc = "religious_leagues.34.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = tausenite
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = tausenite
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.34.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = tausenite
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = tausenite
+	}
+}
+
+# Victory of the Huguenot League
+country_event = {
+	id = religious_leagues.35
+	title = "religious_leagues.35.t"
+	desc = "religious_leagues.35.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = huguenot
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = huguenot
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.35.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = huguenot
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = huguenot
+	}
+}
+
+# Victory of the Servetusic League
+country_event = {
+	id = religious_leagues.36
+	title = "religious_leagues.36.t"
+	desc = "religious_leagues.36.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = julianic
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = julianic
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.36.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = julianic
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = julianic
+	}
+}
+
+# Victory of the Arminianist League
+country_event = {
+	id = religious_leagues.37
+	title = "religious_leagues.37.t"
+	desc = "religious_leagues.37.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = arminian
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = arminian
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.37.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = arminian
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = arminian
+	}
+}
+
+# Victory of the Socinianist League
+country_event = {
+	id = religious_leagues.38
+	title = "religious_leagues.38.t"
+	desc = "religious_leagues.38.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = socinian
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = socinian
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.38.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = socinian
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = socinian
+	}
+}
+
+# Victory of the Bironic League
+country_event = {
+	id = religious_leagues.39
+	title = "religious_leagues.39.t"
+	desc = "religious_leagues.39.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = bironic
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = bironic
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.39.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = bironic
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = bironic
+	}
+}
+
+# Victory of the Radzianist League
+country_event = {
+	id = religious_leagues.40
+	title = "religious_leagues.40.t"
+	desc = "religious_leagues.40.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = radzian
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = radzian
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.40.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = radzian
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = radzian
+	}
+}
+
+# Victory of the Molinist League
+country_event = {
+	id = religious_leagues.41
+	title = "religious_leagues.41.t"
+	desc = "religious_leagues.41.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = molinist
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = molinist
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.41.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = molinist
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = molinist
+	}
+}
+
+# Victory of the Hutterite League
+country_event = {
+	id = religious_leagues.42
+	title = "religious_leagues.42.t"
+	desc = "religious_leagues.42.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = hutterite
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = hutterite
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.42.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = hutterite
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = hutterite
+	}
+}
+
+# Victory of the Munsterite League
+country_event = {
+	id = religious_leagues.43
+	title = "religious_leagues.43.t"
+	desc = "religious_leagues.43.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = munsterite
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = munsterite
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.43.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = munsterite
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = munsterite
+	}
+}
+
+# Victory of the Mennonite League
+country_event = {
+	id = religious_leagues.44
+	title = "religious_leagues.44.t"
+	desc = "religious_leagues.44.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		hre_religion = catholic
+		hre_heretic_religion = mennonite
+		OR = {
+			NOT = { has_country_flag = hre_religion_changed }
+			had_country_flag = { flag = hre_religion_changed days = 30 }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = hre_religion_changed
+		hidden_effect = {
+			#set to treaty first so we can set everything else without elections being called at the wrong time
+			set_hre_religion_treaty = yes
+			set_hre_heretic_religion = catholic
+			set_hre_religion = mennonite
+
+			#now set it to locked once we've completed the tasks
+			set_hre_religion_locked = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.44.a"
+		tooltip = { 
+			set_hre_heretic_religion = catholic
+			set_hre_religion = mennonite
+			set_hre_religion_locked = yes			
+		}
+
+		# this should elect a new emperor
+		set_hre_religion = mennonite
+	}
+}
+
+####################################################################################
+# IMPERIAL DIET EVENTS (RELIGIOUS PEACE IN EMPIRE)
+####################################################################################
+
+# The Imperial Diet (Catholic)
+country_event = {
+	id = religious_leagues.6
+	title = "religious_leagues.6.t"
+	desc = "religious_leagues.6.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}
+		has_regency = no
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = catholic
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						OR = {
+							religion = catholic
+							religion = orthodox
+							religion = protestant
+							religion = reformed
+							religion = anglican
+							religion = hussite
+							religion = zwinglist
+							religion = knoxite
+							religion = vasantine
+							religion = tausenite
+							religion = huguenot
+							religion = julianic
+							religion = arminian
+							religion = socinian
+							religion = bironic
+							religion = radzian
+							religion = molinist
+							religion = hutterite
+							religion = munsterite
+							religion = mennonite
+						}
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.6.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Lutheranist)
+country_event = {
+	id = religious_leagues.7
+	title = "religious_leagues.7.t"
+	desc = "religious_leagues.7.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = protestant
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.7.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Calvinist)
+country_event = {
+	id = religious_leagues.45
+	title = "religious_leagues.45.t"
+	desc = "religious_leagues.45.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = reformed
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.45.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Anglican)
+country_event = {
+	id = religious_leagues.46
+	title = "religious_leagues.46.t"
+	desc = "religious_leagues.46.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = anglican
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.46.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Hussite)
+country_event = {
+	id = religious_leagues.47
+	title = "religious_leagues.47.t"
+	desc = "religious_leagues.47.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = hussite
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.47.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Orthodox)
+country_event = {
+	id = religious_leagues.48
+	title = "religious_leagues.48.t"
+	desc = "religious_leagues.48.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = orthodox
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.48.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Zwinglist)
+country_event = {
+	id = religious_leagues.49
+	title = "religious_leagues.49.t"
+	desc = "religious_leagues.49.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = zwinglist
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.49.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Presbyterian)
+country_event = {
+	id = religious_leagues.50
+	title = "religious_leagues.50.t"
+	desc = "religious_leagues.50.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = knoxite
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.50.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Vasantine)
+country_event = {
+	id = religious_leagues.51
+	title = "religious_leagues.51.t"
+	desc = "religious_leagues.51.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = vasantine
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.51.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Tausenite)
+country_event = {
+	id = religious_leagues.52
+	title = "religious_leagues.52.t"
+	desc = "religious_leagues.52.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = tausenite
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.52.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Huguenot)
+country_event = {
+	id = religious_leagues.53
+	title = "religious_leagues.53.t"
+	desc = "religious_leagues.53.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = huguenot
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.53.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Servetusic)
+country_event = {
+	id = religious_leagues.54
+	title = "religious_leagues.54.t"
+	desc = "religious_leagues.54.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = julianic
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.54.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Arminianist)
+country_event = {
+	id = religious_leagues.55
+	title = "religious_leagues.55.t"
+	desc = "religious_leagues.55.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = arminian
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.55.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Socinianist)
+country_event = {
+	id = religious_leagues.56
+	title = "religious_leagues.56.t"
+	desc = "religious_leagues.56.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = socinian
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.56.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Bironic)
+country_event = {
+	id = religious_leagues.57
+	title = "religious_leagues.57.t"
+	desc = "religious_leagues.57.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = bironic
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.57.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Radzianist)
+country_event = {
+	id = religious_leagues.58
+	title = "religious_leagues.58.t"
+	desc = "religious_leagues.58.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = radzian
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.58.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Molinist)
+country_event = {
+	id = religious_leagues.59
+	title = "religious_leagues.59.t"
+	desc = "religious_leagues.59.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = molinist
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.59.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Hutterite)
+country_event = {
+	id = religious_leagues.60
+	title = "religious_leagues.60.t"
+	desc = "religious_leagues.60.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = hutterite
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.60.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Munsterite)
+country_event = {
+	id = religious_leagues.61
+	title = "religious_leagues.61.t"
+	desc = "religious_leagues.61.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = munsterite
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.61.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+# The Imperial Diet (Mennonite)
+country_event = {
+	id = religious_leagues.62
+	title = "religious_leagues.62.t"
+	desc = "religious_leagues.62.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		is_emperor = yes
+		is_at_war = no
+		NOT = {
+			any_known_country = {
+				is_in_league_war = yes
+			}
+		}		
+		has_regency = no	
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		religion = mennonite
+		OR = {
+			AND = {
+				hre_leagues_enabled = yes
+				had_global_flag = {
+					flag = evangelical_union_happened
+					days = 10950
+				}		
+				NOT = {
+					any_known_country = {
+						is_elector = yes
+						religion = catholic
+						is_league_enemy = ROOT
+						truce_with = ROOT
+					}		
+				}
+			}
+			AND = {
+				NOT = { has_global_flag = evangelical_union_happened }
+				is_year = 1625
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "religious_leagues.62.a"
+		set_hre_religion_locked = yes
+	}
+}
+
+####################################################################################
+# OTHER EVENTS
+####################################################################################
+
+# Peace of Westphalia (Declare end to league wars)
+country_event = {
+	id = religious_leagues.4
+	title = "religious_leagues.4.t"
+	desc = "religious_leagues.4.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_hre_religion_treaty = yes
+		}
+	}
+
+	option = {
+		name = "religious_leagues.4.a"
+		tooltip = { 
+			set_hre_religion_treaty = yes
+		}
+	}
+}
+
+#The Evangelical Union (Decide heretic religion)
+#country_event = {
+#	id = religious_leagues.50
+#	title = "religious_leagues.5.t"
+#	desc = "religious_leagues.5.d"
+#	picture = RELIGIOUS_WARS_eventPicture
+#	major = yes
+#	fire_only_once = yes
+#	
+#	is_triggered_only = yes
+#	
+#	option = {
+#		name = "religious_leagues.5.a"
+#		
+#		if = {
+#			limit = {
+#				hre_heretic_religion = protestant
+#			}
+#			custom_tooltip = protestant_league_tt
+#		}
+#		else_if = {
+#			limit = {
+#				hre_heretic_religion = reformed
+#			}
+#			custom_tooltip = reformed_league_tt
+#		}
+#		else_if = {
+#			limit = {
+#				hre_heretic_religion = hussite
+#			}
+#			custom_tooltip = hussite_league_tt
+#		}
+#	}
+#}
+
+# The Evangelical Union (Enable leagues to form and decide them)
+country_event = {
+	id = religious_leagues.5
+	title = "religious_leagues.5.t"
+	desc = "religious_leagues.5.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Art of War"
+		NOT = { has_global_flag = evangelical_union_happened }
+		hre_leagues_enabled = no
+		hre_religion_locked = no
+		hre_religion_treaty = no
+		is_emperor = yes		
+		is_year = 1550
+		religion = catholic
+		has_global_flag = counter_reformation
+		any_known_country = {
+			is_elector = yes
+			OR = {
+				religion = orthodox
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = zwinglist
+				religion = knoxite
+				religion = vasantine
+				religion = tausenite
+				religion = huguenot
+				religion = julianic
+				religion = arminian
+				religion = socinian
+				religion = bironic
+				religion = radzian
+				religion = molinist
+				religion = hutterite
+				religion = munsterite
+				religion = mennonite
+			}
+			is_free_or_tributary_trigger = yes
+		}
+		NOT = { hre_reform_passed = erbkaisertum }
+		NOT = { has_global_flag = great_peasants_war_flag }
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			is_year = 1575
+		}
+		modifier = {
+			factor = 0.1
+			is_year = 1600
+		}		
+	}
+
+	immediate = {
+
+		#############################
+		# Get lutheranist provinces #
+		#############################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = protestant
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_protestant_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = protestant_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = protestant
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_protestant_owned }
+				}
+				set_province_flag = hre_post_leaguewar_protestant_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_protestant_owned
+		}
+
+		###########################
+		# Get calvinist provinces #
+		###########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = reformed
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_reformed_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = reformed_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = reformed
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_reformed_owned }
+				}
+				set_province_flag = hre_post_leaguewar_reformed_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_reformed_owned
+		}
+
+		#########################
+		# Get hussite provinces #
+		#########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = hussite
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_hussite_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = hussite_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = hussite
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_hussite_owned }
+				}
+				set_province_flag = hre_post_leaguewar_hussite_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_hussite_owned
+		}
+
+		##########################
+		# Get anglican provinces #
+		##########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = anglican
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_anglican_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = anglican_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = anglican
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_anglican_owned }
+				}
+				set_province_flag = hre_post_leaguewar_anglican_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_anglican_owned
+		}
+
+		##########################
+		# Get orthodox provinces #
+		##########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = orthodox
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_orthodox_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = orthodox_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = orthodox
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_orthodox_owned }
+				}
+				set_province_flag = hre_post_leaguewar_orthodox_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_orthodox_owned
+		}
+
+		###########################
+		# Get zwinglist provinces #
+		###########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = zwinglist
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_zwinglist_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = zwinglist_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = zwinglist
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_zwinglist_owned }
+				}
+				set_province_flag = hre_post_leaguewar_zwinglist_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_zwinglist_owned
+		}
+
+		#########################
+		# Get knoxite provinces #
+		#########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = knoxite
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_knoxite_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = knoxite_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = knoxite
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_knoxite_owned }
+				}
+				set_province_flag = hre_post_leaguewar_knoxite_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_knoxite_owned
+		}
+
+		###########################
+		# Get vasantine provinces #
+		###########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = vasantine
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_vasantine_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = vasantine_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = vasantine
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_vasantine_owned }
+				}
+				set_province_flag = hre_post_leaguewar_vasantine_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_vasantine_owned
+		}
+
+		###########################
+		# Get tausenite provinces #
+		###########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = tausenite
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_tausenite_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = tausenite_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = tausenite
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_tausenite_owned }
+				}
+				set_province_flag = hre_post_leaguewar_tausenite_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_tausenite_owned
+		}
+
+		##########################
+		# Get huguenot provinces #
+		##########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = huguenot
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_huguenot_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = huguenot_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = huguenot
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_huguenot_owned }
+				}
+				set_province_flag = hre_post_leaguewar_huguenot_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_huguenot_owned
+		}
+
+		##########################
+		# Get julianic provinces #
+		##########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = julianic
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_julianic_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = julianic_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = julianic
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_julianic_owned }
+				}
+				set_province_flag = hre_post_leaguewar_julianic_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_julianic_owned
+		}
+
+		##########################
+		# Get arminian provinces #
+		##########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = arminian
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_arminian_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = arminian_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = arminian
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_arminian_owned }
+				}
+				set_province_flag = hre_post_leaguewar_arminian_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_arminian_owned
+		}
+
+		##########################
+		# Get socinian provinces #
+		##########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = socinian
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_socinian_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = socinian_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = socinian
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_socinian_owned }
+				}
+				set_province_flag = hre_post_leaguewar_socinian_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_socinian_owned
+		}
+
+		#########################
+		# Get bironic provinces #
+		#########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = bironic
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_bironic_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = bironic_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = bironic
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_bironic_owned }
+				}
+				set_province_flag = hre_post_leaguewar_bironic_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_bironic_owned
+		}
+
+		#########################
+		# Get radzian provinces #
+		#########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = radzian
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_radzian_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = radzian_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = radzian
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_radzian_owned }
+				}
+				set_province_flag = hre_post_leaguewar_radzian_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_radzian_owned
+		}
+
+		##########################
+		# Get molinist provinces #
+		##########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = molinist
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_molinist_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = molinist_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = molinist
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_molinist_owned }
+				}
+				set_province_flag = hre_post_leaguewar_molinist_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_molinist_owned
+		}
+
+		###########################
+		# Get hutterite provinces #
+		###########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = hutterite
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_hutterite_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = hutterite_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = hutterite
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_hutterite_owned }
+				}
+				set_province_flag = hre_post_leaguewar_hutterite_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_hutterite_owned
+		}
+
+		############################
+		# Get munsterite provinces #
+		############################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = munsterite
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_munsterite_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = munsterite_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = munsterite
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_munsterite_owned }
+				}
+				set_province_flag = hre_post_leaguewar_munsterite_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_munsterite_owned
+		}
+
+		###########################
+		# Get mennonite provinces #
+		###########################
+		while = {
+			limit = {
+				any_province = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = mennonite
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_mennonite_owned }
+				}
+			}
+
+			1 = { #Stockholm is the global variable substitute
+				change_variable = {
+					which = mennonite_hre_member_provinces
+					value = 1
+				}
+			}
+
+			random_province = {
+				limit = {
+					is_part_of_hre = yes
+					owner = {
+						is_part_of_hre = yes
+						religion = mennonite
+					}
+					NOT = { has_province_flag = hre_post_leaguewar_mennonite_owned }
+				}
+				set_province_flag = hre_post_leaguewar_mennonite_owned
+			}
+		}
+
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			clr_province_flag = hre_post_leaguewar_mennonite_owned
+		}
+
+		##################################
+		# Determine the heretic religion #
+		##################################
+		1 = {
+
+			#Compare all faiths to protestant (1)
+			if = {
+                limit = {
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = reformed_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = hussite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = anglican_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = orthodox_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = zwinglist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = knoxite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = vasantine_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = tausenite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = huguenot_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = julianic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = arminian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = socinian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = bironic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = protestant_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = protestant
+            }
+
+            #Compare all faiths to reformed (2)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = hussite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = anglican_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = orthodox_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = zwinglist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = knoxite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = vasantine_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = tausenite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = huguenot_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = julianic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = arminian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = socinian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = bironic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = reformed_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = reformed
+            }
+
+            #Compare all faiths to hussite (3)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = anglican_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = orthodox_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = zwinglist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = knoxite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = vasantine_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = tausenite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = huguenot_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = julianic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = arminian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = socinian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = bironic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hussite_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = hussite
+            }
+
+            #Compare all faiths to anglican (4)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = orthodox_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = zwinglist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = knoxite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = vasantine_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = tausenite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = huguenot_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = julianic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = arminian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = socinian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = bironic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = anglican_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = anglican
+            }
+
+            #Compare all faiths to orthodox (5)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = zwinglist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = knoxite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = vasantine_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = tausenite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = huguenot_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = julianic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = arminian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = socinian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = bironic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = orthodox_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = orthodox
+            }
+
+            #Compare all faiths to zwinglist (6)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = zwinglist_hre_member_provinces
+                        which = knoxite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = zwinglist_hre_member_provinces
+                        which = vasantine_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = zwinglist_hre_member_provinces
+                        which = tausenite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = zwinglist_hre_member_provinces
+                        which = huguenot_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = zwinglist_hre_member_provinces
+                        which = julianic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = zwinglist_hre_member_provinces
+                        which = arminian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = zwinglist_hre_member_provinces
+                        which = socinian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = zwinglist_hre_member_provinces
+                        which = bironic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = zwinglist_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = zwinglist_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = zwinglist_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = zwinglist_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = zwinglist_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = zwinglist
+            }
+
+            #Compare all faiths to knoxite (7)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = knoxite_hre_member_provinces
+                        which = vasantine_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = knoxite_hre_member_provinces
+                        which = tausenite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = knoxite_hre_member_provinces
+                        which = huguenot_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = knoxite_hre_member_provinces
+                        which = julianic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = knoxite_hre_member_provinces
+                        which = arminian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = knoxite_hre_member_provinces
+                        which = socinian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = knoxite_hre_member_provinces
+                        which = bironic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = knoxite_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = knoxite_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = knoxite_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = knoxite_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = knoxite_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = knoxite
+            }
+
+            #Compare all faiths to vasantine (8)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = vasantine_hre_member_provinces
+                        which = tausenite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = vasantine_hre_member_provinces
+                        which = huguenot_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = vasantine_hre_member_provinces
+                        which = julianic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = vasantine_hre_member_provinces
+                        which = arminian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = vasantine_hre_member_provinces
+                        which = socinian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = vasantine_hre_member_provinces
+                        which = bironic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = vasantine_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = vasantine_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = vasantine_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = vasantine_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = vasantine_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = vasantine
+            }
+
+            #Compare all faiths to tausenite (9)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = tausenite_hre_member_provinces
+                        which = huguenot_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = tausenite_hre_member_provinces
+                        which = julianic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = tausenite_hre_member_provinces
+                        which = arminian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = tausenite_hre_member_provinces
+                        which = socinian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = tausenite_hre_member_provinces
+                        which = bironic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = tausenite_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = tausenite_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = tausenite_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = tausenite_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = tausenite_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = tausenite
+            }
+
+            #Compare all faiths to huguenot (10)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = huguenot_hre_member_provinces
+                        which = julianic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = huguenot_hre_member_provinces
+                        which = arminian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = huguenot_hre_member_provinces
+                        which = socinian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = huguenot_hre_member_provinces
+                        which = bironic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = huguenot_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = huguenot_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = huguenot_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = huguenot_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = huguenot_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = huguenot
+            }
+
+            #Compare all faiths to julianic (11)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = julianic_hre_member_provinces
+                        which = arminian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = julianic_hre_member_provinces
+                        which = socinian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = julianic_hre_member_provinces
+                        which = bironic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = julianic_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = julianic_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = julianic_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = julianic_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = julianic_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = julianic
+            }
+
+            #Compare all faiths to arminian (12)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = arminian_hre_member_provinces
+                        which = socinian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = arminian_hre_member_provinces
+                        which = bironic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = arminian_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = arminian_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = arminian_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = arminian_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = arminian_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = arminian
+            }
+
+            #Compare all faiths to socinian (13)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = socinian_hre_member_provinces
+                        which = bironic_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = socinian_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = socinian_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = socinian_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = socinian_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = socinian_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = socinian
+            }
+
+            #Compare all faiths to bironic (14)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = bironic_hre_member_provinces
+                        which = radzian_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = bironic_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = bironic_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = bironic_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = bironic_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = bironic
+            }
+
+            #Compare all faiths to radzian (15)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = radzian_hre_member_provinces
+                        which = molinist_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = radzian_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = radzian_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = radzian_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = radzian
+            }
+
+            #Compare all faiths to molinist (16)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = molinist_hre_member_provinces
+                        which = hutterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = molinist_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = molinist_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = molinist
+            }
+
+            #Compare all faiths to hutterite (17)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = hutterite_hre_member_provinces
+                        which = munsterite_hre_member_provinces
+                    }
+                    check_variable = {
+                        which = hutterite_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = hutterite
+            }
+
+            #Compare all faiths to munsterite (18)
+            else_if = {
+                limit = {
+                    check_variable = {
+                        which = munsterite_hre_member_provinces
+                        which = mennonite_hre_member_provinces
+                    }
+                }
+                set_hre_heretic_religion = munsterite
+            }
+
+            #Compare all faiths to mennonite (19)
+            else = {
+                set_hre_heretic_religion = mennonite
+            }
+		}
+	}
+
+	#Enable religious leagues and indicate the new heretic league
+	option = {
+		name = "religious_leagues.5.a"
+		set_global_flag = evangelical_union_happened
+		
+		if = {
+			limit = {
+				hre_heretic_religion = protestant
+			}
+			custom_tooltip = protestant_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = reformed
+			}
+			custom_tooltip = reformed_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = hussite
+			}
+			custom_tooltip = hussite_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = orthodox
+			}
+			custom_tooltip = orthodox_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = anglican
+			}
+			custom_tooltip = anglican_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = zwinglist
+			}
+			custom_tooltip = zwinglist_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = knoxite
+			}
+			custom_tooltip = knoxite_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = vasantine
+			}
+			custom_tooltip = vasantine_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = tausenite
+			}
+			custom_tooltip = tausenite_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = huguenot
+			}
+			custom_tooltip = huguenot_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = julianic
+			}
+			custom_tooltip = julianic_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = arminian
+			}
+			custom_tooltip = arminian_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = socinian
+			}
+			custom_tooltip = socinian_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = bironic
+			}
+			custom_tooltip = bironic_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = radzian
+			}
+			custom_tooltip = radzian_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = molinist
+			}
+			custom_tooltip = molinist_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = hutterite
+			}
+			custom_tooltip = hutterite_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = munsterite
+			}
+			custom_tooltip = munsterite_league_tt
+		}
+
+		else_if = {
+			limit = {
+				hre_heretic_religion = mennonite
+			}
+			custom_tooltip = mennonite_league_tt
+		}
+
+		enable_hre_leagues = yes
+	}
+
+	#Clean up variables
+	after = {
+		1 = {
+			set_variable = {
+				which = protestant_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = reformed_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = hussite_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = orthodox_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = anglican_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = zwinglist_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = knoxite_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = vasantine_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = tausenite_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = huguenot_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = julianic_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = arminian_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = socinian_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = bironic_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = radzian_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = molinist_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = hutterite_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = munsterite_hre_member_provinces
+				value = 0
+			}
+
+			set_variable = {
+				which = mennonite_hre_member_provinces
+				value = 0
+			}
+		}
+	}	
+}

@@ -1,0 +1,450 @@
+#Molinist Center Appears
+country_event = {
+	id = mb.21
+	title = "mb.21.t"
+	desc = "mb.21.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		is_religion_enabled = molinist
+		religion_years = { molinist = 3 }
+		NOT = { religion_years = { molinist = 80 } }
+		NOT = { has_reform = papacy_reform }
+		capital_scope = {
+			continent = europe
+		}
+		any_owned_province = {
+			OR = {
+				culture_group = iberian
+				culture_group = latin
+			}
+			can_have_center_of_reformation_trigger = {
+				RELIGION = molinist
+			}
+		}
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					religion = molinist
+					is_reformation_center = yes
+				}
+				amount = 2
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+		
+		modifier = {
+			factor = 0.25
+			culture = castillian
+		}
+		modifier = {
+			factor = 0.25
+			culture = andalucian
+		}
+		modifier = {
+			factor = 0.25
+			culture = portugese
+		}
+		modifier = {
+			factor = 0.5
+			has_idea_group = innovativeness_ideas
+		}
+		modifier = {
+			factor = 0.95
+			NOT = { has_opinion = { who = PAP value = -50 } }
+		}
+		modifier = {
+			factor = 0.85
+			NOT = { has_opinion = { who = PAP value = -100 } }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { has_opinion = { who = PAP value = -150 } }
+		}		
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 1
+		}
+		modifier = {
+			factor = 2.0
+			government = theocracy
+		}
+		modifier = {
+			factor = 8.0
+			OR = {
+				NOT = { exists = PAP }
+				PAP = { is_part_of_hre = no }
+			}
+		}
+		modifier = {
+			factor = 0.75
+			PAP = { is_part_of_hre = yes }
+			is_part_of_hre = no
+		}
+	}
+	
+	option = {
+		name = "mb.21.a"
+		adm_power = 100
+		dip_power = -50
+		mil_power = -50
+		add_stability = 1
+		random_owned_province = {
+			limit = {
+				OR = {
+					culture_group = iberian
+					culture_group = latin
+				}
+				can_have_center_of_reformation_trigger = {
+					RELIGION = molinist
+				}
+			}
+			change_religion = molinist
+			add_reform_center = molinist
+			add_permanent_province_modifier = {
+				name = "religious_zeal_at_conv"
+				duration = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "mb.21.b"
+		adm_power = -50
+		dip_power = 100
+		mil_power = -50
+		add_prestige = 25
+		random_owned_province = {
+			limit = {
+				OR = {
+					culture_group = iberian
+					culture_group = latin
+				}
+				can_have_center_of_reformation_trigger = {
+					RELIGION = molinist
+				}
+			}
+			change_religion = molinist
+			add_reform_center = molinist
+			add_permanent_province_modifier = {
+				name = "religious_zeal_at_conv"
+				duration = 3650
+			}
+		}
+	}
+
+	option = {
+		name = "mb.21.c"
+		adm_power = -50
+		dip_power = -50
+		mil_power = 100
+		add_army_tradition = 10
+		random_owned_province = {
+			limit = {
+				OR = {
+					culture_group = iberian
+					culture_group = latin
+				}
+				can_have_center_of_reformation_trigger = {
+					RELIGION = molinist
+				}
+			}
+			change_religion = molinist
+			add_reform_center = molinist
+			add_permanent_province_modifier = {
+				name = "religious_zeal_at_conv"
+				duration = 3650
+			}
+		}
+	}
+}
+
+#Religious War
+country_event = {
+	id = mb.48
+	title = "mb.48.t"
+	desc = "mb.48.d"
+	picture = BATTLE_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = hussite
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		NOT = { religious_unity = 0.75 }
+		NOT = { has_country_modifier = more_religious_war }
+		NOT = { religion = molinist }
+		is_religion_enabled = molinist
+		num_of_cities = 5
+		religion_years = { molinist = 6 }
+		NOT = { religion_years = { molinist = 80 } }
+		NOT = { has_reform = papacy_reform }
+		capital_scope = {
+			continent = europe
+		}
+		num_of_owned_provinces_with = {
+			value = 3
+			religion = molinist
+		}
+	}
+
+	major = yes
+
+	mean_time_to_happen = {
+		months = 360
+		
+		modifier = {
+			factor = 0.75
+			has_idea_group = innovativeness_ideas
+		}
+		modifier = {
+			factor = 0.75
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 2
+			has_idea_group = humanist_ideas
+		}
+		modifier = {
+			factor = 0.95
+			NOT = { has_opinion = { who = PAP value = -50 } }
+		}
+		modifier = {
+			factor = 0.85
+			NOT = { has_opinion = { who = PAP value = -100 } }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { has_opinion = { who = PAP value = -150 } }
+		}
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 1
+		}
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 2
+		}
+		modifier = {
+			factor = 2.0
+			government = theocracy
+		}
+	}
+	
+
+	option = { #Stay Your own religion
+		name = "mb.48.a"
+
+		add_stability = -3
+		random_owned_province = {
+			limit = {
+				has_owner_religion = no
+			}
+			spawn_rebels = {
+				type = molinist_rebels
+				size = 2
+			}
+		}
+		random_owned_province = {
+			limit = {
+				has_owner_religion = no
+			}
+			spawn_rebels = {
+				type = molinist_rebels
+				size = 2
+			}
+		}
+		add_country_modifier = {
+			name = more_religious_war
+			duration = 3650
+		}
+	}
+
+	option = { #Go molinist
+		name = "mb.48.b"
+
+		add_stability = -1
+		add_prestige = -50
+		change_religion = molinist
+		add_country_modifier = {
+			name = more_religious_war
+			duration = 3650
+		}
+	}
+
+	option = { #Go Moderate
+		name = "mb.48.c"
+
+		add_stability = -2
+		add_prestige = -25
+	}
+}
+
+#Heresies spread
+province_event = {
+	id = mb.49
+	title = "mb.49.t"
+	desc = "mb.49.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		has_owner_religion = yes
+		owner = {
+			OR = {
+				religion = catholic
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = zwinglist
+				religion = knoxite
+				religion = vasantine
+				religion = tausenite
+				religion = huguenot
+				religion = julianic
+				religion = arminian
+				religion = socinian
+				religion = bironic
+				religion = radzian
+				religion = molinist
+				religion = hutterite
+				religion = munsterite
+				religion = mennonite
+			}
+		}
+		NOT = { province_id = 118 }
+		NOT = { religion = molinist }
+		is_religion_enabled = molinist
+		religion_years = { molinist = 2 }
+		NOT = { has_province_modifier = religious_zeal_at_conv }
+		NOT = { religion_years = { molinist = 40 } }
+		owner = {
+			NOT = { stability = 0 }
+			num_of_cities = 3
+			NOT = { has_country_modifier = more_heresies }
+			NOT = { has_reform = papacy_reform }
+			capital_scope = {
+				continent = europe
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+
+		modifier = {
+			factor = 0.75
+			owner = {
+				has_country_modifier = more_religious_war
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				war_exhaustion = 10
+			}
+		}
+		modifier = {
+			factor = 0.90
+			unrest = 3
+		}		
+		modifier = {
+			factor = 0.90
+			unrest = 5
+		}		
+		modifier = {
+			factor = 0.90
+			unrest = 7
+		}		
+		modifier = {
+			factor = 0.90
+			unrest = 9
+		}		
+		modifier = {
+			factor = 0.90
+			unrest = 11
+		}
+		modifier = {
+			factor = 0.90
+			owner = {
+				NOT = { stability = -1 }
+			}
+		}
+		modifier = {
+			factor = 0.90
+			owner = {
+				NOT = { stability = -2 }
+			}
+		}
+	}
+
+	option = { #Rebellion
+		name = "mb.49.a"
+
+		spawn_rebels = {
+			type = molinist_rebels
+			size = 1
+		}
+		owner = {
+			add_country_modifier = {
+				name = more_heresies
+				duration = 3650
+			}
+		}
+	}
+
+	option = { #Stability Loss
+		name = "mb.49.b"
+
+		change_religion = molinist
+		owner = {
+			add_stability = -1
+			add_country_modifier = {
+				name = more_heresies
+				duration = 3650
+			}
+		}
+		add_province_modifier = religious_zeal_at_conv
+	}
+}

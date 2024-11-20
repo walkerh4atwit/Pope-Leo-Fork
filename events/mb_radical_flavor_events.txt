@@ -1,0 +1,641 @@
+#Radicals Want More
+country_event = {
+	id = mb.113
+	title = "mb.113.t"
+	desc = "mb.113.d"
+	picture = PROTESTANT_CATHOLIC_DEBATE_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = hussite
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				religion = hussite
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+		NOT = { has_country_flag = mb_radical_reform }
+	}
+
+	mean_time_to_happen = {
+		months = 720
+	}
+	
+	option = { #Reform the Government
+		name = "mb.113.a"
+		set_country_flag = mb_radical_reform
+		add_adm_power = -150
+		add_country_modifier = {
+			name = mb_radical_reforms
+			duration = 9125
+		}
+	}
+	option = { #Refuse
+		name = "mb.113.b"
+		set_country_flag = mb_radical_reform
+		if = {
+			limit = {
+				religion = hussite
+			}
+			add_church_power = -100
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -50
+		}
+	}
+}
+
+#Migration
+country_event = {
+	id = mb.114
+	title = "mb.114.t"
+	desc = "mb.114.d"
+	picture = PROTESTANT_CATHOLIC_DEBATE_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = hussite
+			religion = hutterite
+			religion = munsterite
+			religion = mennonite
+		}
+		if = { #Uses Church Power
+			limit = {
+				religion = hussite
+			}
+			NOT = { num_of_aspects = 3 }
+			NOT = { church_power = 200 }
+		}
+		if = { #Uses Fervor
+			limit = {
+				OR = {
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			uses_fervor = yes
+		}
+		NOT = { has_country_flag = mb_followers_migrate }
+	}
+
+	mean_time_to_happen = {
+		months = 720
+	}
+	
+	option = { #Encourage them to Stay
+		name = "mb.114.a"
+		set_country_flag = mb_followers_migrate
+		add_adm_power = -100
+		add_country_modifier = {
+			name = mb_followers_migrate
+			duration = 9125
+		}
+	}
+	option = { #Let them go
+		name = "mb.114.b"
+		set_country_flag = mb_followers_migrate
+		if = {
+			limit = {
+				religion = hussite
+			}
+			add_church_power = -50
+		}
+		if = {
+			limit = { #Uses Fervor
+				OR = {
+					religion = hutterite
+					religion = munsterite
+					religion = mennonite
+				}
+			}
+			add_fervor = -25
+		}
+	}
+}
+
+#Has Radical Heretics (Not Radical) (munsterite)
+country_event = {
+	id = mb.115
+	title = "mb.115.t"
+	desc = "mb.115.d"
+	picture = BATTLE_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+		}
+		OR = {
+			NOT = { has_country_modifier = mb_persecuted_radicals }
+			NOT = { has_country_modifier = mb_limited_radicals }
+			NOT = { has_country_modifier = mb_radicals_in_country }
+		}
+		NOT = { religion = munsterite }
+		is_religion_enabled = munsterite
+		religion_years = { munsterite = 3 }
+		NOT = { religion_years = { munsterite = 80 } }
+		NOT = { has_reform = papacy_reform }
+		capital_scope = {
+			continent = europe
+		}
+		num_of_owned_provinces_with = {
+			value = 2
+			religion = munsterite
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 360
+		
+		modifier = {
+			factor = 0.75
+			has_idea_group = innovativeness_ideas
+		}
+		modifier = {
+			factor = 0.75
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 2
+			has_idea_group = humanist_ideas
+		}
+		modifier = {
+			factor = 0.95
+			NOT = { has_opinion = { who = PAP value = -50 } }
+		}
+		modifier = {
+			factor = 0.85
+			NOT = { has_opinion = { who = PAP value = -100 } }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { has_opinion = { who = PAP value = -150 } }
+		}
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 1
+		}
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 2
+		}
+		modifier = {
+			factor = 2.0
+			government = theocracy
+		}
+	}
+	
+	option = { #Persecute them
+		name = "mb.115.a"
+
+		add_stability = -2
+		random_owned_province = {
+			limit = {
+				has_owner_religion = no
+			}
+			spawn_rebels = {
+				type = munsterite_rebels
+				size = 2
+			}
+		}
+		add_country_modifier = {
+			name = mb_persecuted_radicals
+			duration = 3650
+		}
+	}
+
+	option = { #Limit their growth
+		name = "mb.115.b"
+
+		add_stability = -1
+		add_prestige = -25
+		add_country_modifier = {
+			name = mb_limited_radicals
+			duration = 3650
+		}
+	}
+
+	option = { #Leave them alone
+		name = "mb.115.c"
+
+		add_prestige = -50
+		add_country_modifier = {
+			name = mb_radicals_in_country
+			duration = 3650
+		}
+	}
+}
+
+#Has Radical Heretics (Not Radical) (hutterite)
+country_event = {
+	id = mb.116
+	title = "mb.116.t"
+	desc = "mb.116.d"
+	picture = BATTLE_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+		}
+		OR = {
+			NOT = { has_country_modifier = mb_persecuted_radicals }
+			NOT = { has_country_modifier = mb_limited_radicals }
+			NOT = { has_country_modifier = mb_radicals_in_country }
+		}
+		NOT = { religion = hutterite }
+		is_religion_enabled = hutterite
+		religion_years = { hutterite = 3 }
+		NOT = { religion_years = { hutterite = 80 } }
+		NOT = { has_reform = papacy_reform }
+		capital_scope = {
+			continent = europe
+		}
+		num_of_owned_provinces_with = {
+			value = 2
+			religion = hutterite
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 360
+		
+		modifier = {
+			factor = 0.75
+			has_idea_group = innovativeness_ideas
+		}
+		modifier = {
+			factor = 0.75
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 2
+			has_idea_group = humanist_ideas
+		}
+		modifier = {
+			factor = 0.95
+			NOT = { has_opinion = { who = PAP value = -50 } }
+		}
+		modifier = {
+			factor = 0.85
+			NOT = { has_opinion = { who = PAP value = -100 } }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { has_opinion = { who = PAP value = -150 } }
+		}
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 1
+		}
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 2
+		}
+		modifier = {
+			factor = 2.0
+			government = theocracy
+		}
+	}
+	
+	option = { #Persecute them
+		name = "mb.116.a"
+
+		add_stability = -2
+		random_owned_province = {
+			limit = {
+				has_owner_religion = no
+			}
+			spawn_rebels = {
+				type = hutterite_rebels
+				size = 2
+			}
+		}
+		add_country_modifier = {
+			name = mb_persecuted_radicals
+			duration = 3650
+		}
+	}
+
+	option = { #Limit their growth
+		name = "mb.116.b"
+
+		add_stability = -1
+		add_prestige = -25
+		add_country_modifier = {
+			name = mb_limited_radicals
+			duration = 3650
+		}
+	}
+
+	option = { #Leave them alone
+		name = "mb.116.c"
+
+		add_prestige = -50
+		add_country_modifier = {
+			name = mb_radicals_in_country
+			duration = 3650
+		}
+	}
+}
+
+#Has Radical Heretics (Not Radical) (mennonite)
+country_event = {
+	id = mb.117
+	title = "mb.117.t"
+	desc = "mb.117.d"
+	picture = BATTLE_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+		}
+		OR = {
+			NOT = { has_country_modifier = mb_persecuted_radicals }
+			NOT = { has_country_modifier = mb_limited_radicals }
+			NOT = { has_country_modifier = mb_radicals_in_country }
+		}
+		NOT = { religion = mennonite }
+		is_religion_enabled = mennonite
+		religion_years = { mennonite = 3 }
+		NOT = { religion_years = { mennonite = 80 } }
+		NOT = { has_reform = papacy_reform }
+		capital_scope = {
+			continent = europe
+		}
+		num_of_owned_provinces_with = {
+			value = 2
+			religion = mennonite
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 360
+		
+		modifier = {
+			factor = 0.75
+			has_idea_group = innovativeness_ideas
+		}
+		modifier = {
+			factor = 0.75
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 2
+			has_idea_group = humanist_ideas
+		}
+		modifier = {
+			factor = 0.95
+			NOT = { has_opinion = { who = PAP value = -50 } }
+		}
+		modifier = {
+			factor = 0.85
+			NOT = { has_opinion = { who = PAP value = -100 } }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { has_opinion = { who = PAP value = -150 } }
+		}
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 1
+		}
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 2
+		}
+		modifier = {
+			factor = 2.0
+			government = theocracy
+		}
+	}
+	
+	option = { #Persecute them
+		name = "mb.117.a"
+
+		add_stability = -2
+		random_owned_province = {
+			limit = {
+				has_owner_religion = no
+			}
+			spawn_rebels = {
+				type = mennonite_rebels
+				size = 2
+			}
+		}
+		add_country_modifier = {
+			name = mb_persecuted_radicals
+			duration = 3650
+		}
+	}
+
+	option = { #Limit their growth
+		name = "mb.117.b"
+
+		add_stability = -1
+		add_prestige = -25
+		add_country_modifier = {
+			name = mb_limited_radicals
+			duration = 3650
+		}
+	}
+
+	option = { #Leave them alone
+		name = "mb.117.c"
+
+		add_prestige = -50
+		add_country_modifier = {
+			name = mb_radicals_in_country
+			duration = 3650
+		}
+	}
+}
+
+#Has Radical Heretics (Not Radical) (hussite)
+country_event = {
+	id = mb.118
+	title = "mb.118.t"
+	desc = "mb.118.d"
+	picture = BATTLE_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = protestant
+			religion = reformed
+			religion = anglican
+			religion = zwinglist
+			religion = knoxite
+			religion = vasantine
+			religion = tausenite
+			religion = huguenot
+			religion = julianic
+			religion = arminian
+			religion = socinian
+			religion = bironic
+			religion = radzian
+			religion = molinist
+		}
+		OR = {
+			NOT = { has_country_modifier = mb_persecuted_radicals }
+			NOT = { has_country_modifier = mb_limited_radicals }
+			NOT = { has_country_modifier = mb_radicals_in_country }
+		}
+		NOT = { religion = hussite }
+		is_religion_enabled = hussite
+		religion_years = { protestant = 10 }
+		NOT = { religion_years = { protestant = 80 } }
+		NOT = { has_reform = papacy_reform }
+		capital_scope = {
+			continent = europe
+		}
+		num_of_owned_provinces_with = {
+			value = 2
+			religion = hussite
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 360
+		
+		modifier = {
+			factor = 0.75
+			has_idea_group = innovativeness_ideas
+		}
+		modifier = {
+			factor = 0.75
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 2
+			has_idea_group = humanist_ideas
+		}
+		modifier = {
+			factor = 0.95
+			NOT = { has_opinion = { who = PAP value = -50 } }
+		}
+		modifier = {
+			factor = 0.85
+			NOT = { has_opinion = { who = PAP value = -100 } }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { has_opinion = { who = PAP value = -150 } }
+		}
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 1
+		}
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 2
+		}
+		modifier = {
+			factor = 2.0
+			government = theocracy
+		}
+	}
+	
+	option = { #Persecute them
+		name = "mb.118.a"
+
+		add_stability = -2
+		random_owned_province = {
+			limit = {
+				has_owner_religion = no
+			}
+			spawn_rebels = {
+				type = hussite_rebels
+				size = 2
+			}
+		}
+		add_country_modifier = {
+			name = mb_persecuted_radicals
+			duration = 3650
+		}
+	}
+
+	option = { #Limit their growth
+		name = "mb.118.b"
+
+		add_stability = -1
+		add_prestige = -25
+		add_country_modifier = {
+			name = mb_limited_radicals
+			duration = 3650
+		}
+	}
+
+	option = { #Leave them alone
+		name = "mb.118.c"
+
+		add_prestige = -50
+		add_country_modifier = {
+			name = mb_radicals_in_country
+			duration = 3650
+		}
+	}
+}
